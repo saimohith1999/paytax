@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Reactive Form
-import {AngularFireStorageModule} from '@angular/fire/storage'
+import {AngularFireStorageModule} from '@angular/fire/storage';
 
 
 import { ReactiveFormsModule,FormsModule} from '@angular/forms';
