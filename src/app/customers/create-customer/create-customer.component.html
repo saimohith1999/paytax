@@ -1,0 +1,74 @@
+<head>
+  <style>
+  body {
+    background-color: coral;
+  }
+  </style>
+  </head>
+  <body>
+  
+
+<div class="row">
+  <div class="offset-sm-4 col-sm-4">
+
+
+
+<div class="center">
+<h3>SECTION 80C</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form name="myform" (ngSubmit)="onSubmit()"onsubmit="return validateForm()" method="post">
+   
+    
+    <div class="form-group">
+      <label for="name"> Full Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name" required>
+   
+    </div>
+    
+    <div class="form-group">
+      <label for="name">Age</label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required>
+   
+    </div>
+    <div class="form-group">
+      <label for="name">Life insurance premium paid</label>
+      <input type="text" class="form-control" id="LIC" required [(ngModel)]="customer.LIC" name="LIC" required>
+   
+    </div>
+ 
+    <div class="form-group">
+      <label for="pan">Deposit in provident fund/superannuation fund</label>
+      <input type="text" class="form-control" id="providentfund" required [(ngModel)]="customer.providentfund" name="providentfund" required>
+   
+    </div>
+    <div class="form-group">
+      <label for="income">Investment in fixed deposit/Bonds</label>
+      <input type="text" class="form-control" id="deposit" required [(ngModel)]="customer.deposit" name="deposit" required>
+    </div>
+    <div class="form-group">
+      <label for="savings">Payment made for preventive health check up</label>
+      <input type="text" class="form-control" id="health" required [(ngModel)]="customer.health" name="health" required>
+    </div>
+    
+    <div class="form-group">
+      <label for="section">Select Vendors</label>
+      <select id="Vendors" class="form-control"  required [(ngModel)]="customer.Vendors" name="Vendors" required>
+        <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
+    </select>
+    </div>
+        
+
+    
+    
+    
+    <button type="submit" class="btn btn-danger">Submit</button>
+  </form>
+</div>
+</div>
+<div>
+  <a  style="text-align: center;"href="http://localhost:4200/reports" class="btn btn-success" >WAY TO TAX REPORTS</a>
+</div>
+
+ 
+
+

@@ -1,0 +1,63 @@
+
+<div class="center">
+<div class="row">
+  <div class="offset-sm-4 col-sm-4">
+    
+<div class="card text-blank">
+ <div class="card-body">
+  <div class="card-title text-center">
+    
+<div class="card text-blank">
+   
+    <div class="authBlock">
+      <h3>Sign Up</h3>
+   
+      <div class="formGroup">
+        <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
+      </div>
+
+      <div class="formGroup">
+        <input type="password" class="formControl" placeholder="Password" #userPwd required>
+      </div>
+
+      <div class="formGroup">
+        <input type="button" class="btn btn-block btn-success" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+      </div>
+
+      <div class="formGroup">
+        <span class="or"><span class="orInner"> </span></span>
+      </div>
+
+      
+      
+    </div>
+
+    <div class="redirectToLogin">
+      <span>Already have an account? <span class="redirect" class="btn btn-block btn-warning"routerLink="/sign-in">Log In</span></span>
+    </div>
+  </div>
+
+</div>
+     </div>
+     </div>
+                     
+    </div> 
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
