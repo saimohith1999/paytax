@@ -12,7 +12,7 @@ import { CustomersListComponent } from '../../customers/customers-list/customers
 import {TaxComponent } from '../../customers/tax/tax.component';
 import{UserprofileComponent} from '../../components/userprofile/userprofile.component';
 import{SectionComponent} from '../../components/section/section.component';
-
+import {recomComponent} from  '../../components/recom-form/recom-form.component';
 
 import { AuthGuard } from "../../shared/guard/auth.guard";
 import { EmployeeProfilesComponent } from 'src/app/components/employee-profiles/employee-profiles.component';
@@ -31,9 +31,9 @@ const routes: Routes = [
   { path: 'tax', component: TaxComponent },
   { path: 'form', component: FormComponent },
   {path:'profile',component:UserprofileComponent},
-  {path:'section',component:SectionComponent}
+  {path:'section',component:SectionComponent},
+ {path: 'recom-form',component:recomComponent}
 
-  
 
 ];
 
