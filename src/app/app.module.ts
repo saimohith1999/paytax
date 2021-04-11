@@ -16,6 +16,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import {recomComponent} from './components/recom-form/recom-form.component';
 
 
 
@@ -45,7 +46,6 @@ import { Section80CCDComponent } from './components/section80-ccd/section80-ccd.
 
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,8 +63,8 @@ import { Section80CCDComponent } from './components/section80-ccd/section80-ccd.
     FormComponent,
     UserprofileComponent,
     SectionComponent,
-    Section80CCDComponent
-
+    Section80CCDComponent,
+    recomComponent
 
 
   ],
