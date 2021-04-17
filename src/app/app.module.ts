@@ -1,7 +1,8 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-// Reactive Form
+// Reactive For
 import {AngularFireStorageModule} from '@angular/fire/storage';
 
 
@@ -17,7 +18,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import {recomComponent} from './components/recom-form/recom-form.component';
-
+import {Section80CComponent} from './components/section-80c/section-80c.component'
 
 
 // Firebase services + enviorment module
@@ -32,6 +33,7 @@ import { environment } from '../environments/environment';
 
 // Auth service
 import { AuthService } from "./shared/services/auth.service";
+
 import { EmployeeProfilesComponent } from './components/employee-profiles/employee-profiles.component';
 import { CompanyPageComponent } from './components/company-page/company-page.component';
 import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
@@ -42,6 +44,8 @@ import { FormComponent } from './components/form/form.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { SectionComponent } from './components/section/section.component';
 import { Section80CCDComponent } from './components/section80-ccd/section80-ccd.component';
+import { SectionDComponent } from './components/section-d/section-d.component';
+
 
 
 
@@ -64,7 +68,10 @@ import { Section80CCDComponent } from './components/section80-ccd/section80-ccd.
     UserprofileComponent,
     SectionComponent,
     Section80CCDComponent,
-    recomComponent
+    recomComponent,
+    Section80CComponent,
+    SectionDComponent
+
 
 
   ],

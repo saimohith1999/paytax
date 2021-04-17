@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './recom-form.component.html',
   styleUrls: ['./recom-form.component.css']
 })
-export class recomComponent implements OnInit {
+export class recomComponent {
+  currentVal="";
 
 
-  ngOnInit() { }
+
+ getVal(val){
+    console.warn(val);
+    this.currentVal=val;
+  }
 
 }
