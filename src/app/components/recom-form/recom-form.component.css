@@ -26,6 +26,21 @@ label {
 .butt{
   margin-top: 20px;
 }
+.year{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display:inline-block;
+  *display: inline;
+  vertical-align:middle;
+  margin-left:20px
+}
+.yearlabel{
+  display:inline-block;
+  *display: inline;
+  padding-top: 5px;
+  text-align: right;
+  width: 140px;
+}
 
 
 /*testimonials*/

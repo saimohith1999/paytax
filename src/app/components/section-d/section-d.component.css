@@ -1,0 +1,23 @@
+.container{
+  position :relative;
+ }
+ form {
+  margin: 40px auto;
+  width: 500px;
+  text-align: center;
+}
+input {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  display:inline-block;
+  margin-left:25px
+}
+
+label {
+  display:inline-block;
+  text-align: right;
+  width: 240px;
+}
+.butt{
+  margin-top: 20px;
+}

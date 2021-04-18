@@ -19,6 +19,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import {recomComponent} from './components/recom-form/recom-form.component';
 import {Section80CComponent} from './components/section-80c/section-80c.component'
+import {MatSelectModule} from '@angular/material/select';
 
 
 // Firebase services + enviorment module
@@ -84,7 +85,8 @@ import { SectionDComponent } from './components/section-d/section-d.component';
     AngularFirestoreModule,
     ReactiveFormsModule,
     FormsModule,
-AngularFireStorageModule
+AngularFireStorageModule,
+MatSelectModule
 
 
   ],

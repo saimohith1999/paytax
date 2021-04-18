@@ -1,35 +1,60 @@
-<html>
-  <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  </head>
-<body class="container">
+<div class="center">
+  <div class="row">
+                                     <div class="offset-sm-4 col-sm-4">
 
-  <form>
-    <div class="container">
-      <div class="jumbotron">
-        <h2>Tax Deductions Under Section 80-C</h2>
+                                   <div class="card text-blank">
+                                    <div class="card-body">
+                                     <div class="card-title text-center">
+
+                                   <div class="card text-blank">
+
+                                       <div class="authBlock">
+  <h3>USER FORM</h3>
+  <div [hidden]="submitted" style="width: 300px;">
+    <form  (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Full NAME </label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name" #name required>
       </div>
 
-    </div>
-    <div class="form-group">
-   <label >Enter Amount</label>
-    <input type="text" ><br>
-    <label> paid for life insurance policy</label>
-    <input type="text" ><br>
-    <label> Investments in PPF, EPF and VPF</label>
-    <input type="text" ><br>
-    <label> Repayment of principal amount of housing loan</label>
-    <input type="text" ><br>
-    <label>Investment in equity-linked savings scheme (ELSS) of mutual funds</label>
-    <input type="text" ><br>
-    <label>Investments in certain post-office schemes like Sukanya Samriddhi Yojana (SSY), National Savings Certificates (NSC), Senior Citizens' Savings Schemes(SCSS)</label>
-    <input type="text" ><br>
-  <button type="submit" class="btn btn-primary butt">Submit</button>
-</div>
-</form>
+      <div class="form-group">
+        <label for="Aadhar">AADHAR</label>
+        <input type="text" class="form-control" id="age" required [(ngModel)]="customer.Aadhar" name="age" required>
+      </div>
 
-</body>
-</html>
+      <div class="form-group">
+        <label for="dob">DATE OF BIRTH</label>
+            <input type="date" id="dob" class="form-control" [(ngModel)]="customer.dob" name="dob" required >
+
+    </div>
+
+    <div class="form-group">
+      <label for="gender">GENDER</label>
+      <select id="gender" class="form-control"  required [(ngModel)]="customer.gender" name="gender" required>
+        <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
+    </select>
+    </div>
+      <div class="form-group">
+        <label for="age">AGE</label>
+        <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required>
+      </div>
+      <button type="submit" class="btn btn-success">Submit</button>
+
+
+
+    </form>
+
+  </div>
+
+
+  </div>
+  </div>
+  </div>
+  </div>
+
+  <a class="btn btn-warning" href="http://localhost:4200/register-user">Next</a>
+  </div>
+  </div>
+
+  </div>
+  </div>
