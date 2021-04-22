@@ -1,74 +1,168 @@
+<html>
 <head>
-  <style>
-  body {
-    background-color: coral;
-  }
-  </style>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
   </head>
   <body>
-  
 
-<div class="row">
-  <div class="offset-sm-4 col-sm-4">
+    <section id="navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="http://localhost:4200/section">SECTIONS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/add">SECTION 80C</a>
+          </li>
+          <li class="nav-item article active">
+            <a class="nav-link" href="http://localhost:4200/addsection80-d">SECTION 80D</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/section-80ccd">SECTION 80CCD</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
 
+        </span>
 
+      </div>
+    </nav>
+      </section>
 
-<div class="center">
-<h3>SECTION 80C</h3>
-<div [hidden]="submitted" style="width: 300px;">
-  <form name="myform" (ngSubmit)="onSubmit()"onsubmit="return validateForm()" method="post">
-   
-    
-    <div class="form-group">
-      <label for="name"> Full Name</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name" required>
-   
-    </div>
-    
-    <div class="form-group">
-      <label for="name">Age</label>
-      <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required>
-   
-    </div>
-    <div class="form-group">
-      <label for="name">Life insurance premium paid</label>
-      <input type="text" class="form-control" id="LIC" required [(ngModel)]="customer.LIC" name="LIC" required>
-   
-    </div>
- 
-    <div class="form-group">
-      <label for="pan">Deposit in provident fund/superannuation fund</label>
-      <input type="text" class="form-control" id="providentfund" required [(ngModel)]="customer.providentfund" name="providentfund" required>
-   
-    </div>
-    <div class="form-group">
-      <label for="income">Investment in fixed deposit/Bonds</label>
-      <input type="text" class="form-control" id="deposit" required [(ngModel)]="customer.deposit" name="deposit" required>
-    </div>
-    <div class="form-group">
-      <label for="savings">Payment made for preventive health check up</label>
-      <input type="text" class="form-control" id="health" required [(ngModel)]="customer.health" name="health" required>
-    </div>
-    
-    <div class="form-group">
-      <label for="section">Select Vendors</label>
-      <select id="Vendors" class="form-control"  required [(ngModel)]="customer.Vendors" name="Vendors" required>
-        <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
-    </select>
-    </div>
-        
+<main class="my-form">
+  <div class="cotainer">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+                  <div class="card">
+                      <div class="card-header">Section 80C</div>
+                      <div class="card-body">
+                          <form name="myform" (ngSubmit)="onSubmit()"onsubmit="return validateForm()" method="post">
+                              <div class="form-group row">
+                                  <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name" required>
+                                  </div>
+                              </div>
 
-    
-    
-    
-    <button type="submit" class="btn btn-danger">Submit</button>
-  </form>
-</div>
-</div>
-<div>
-  <a  style="text-align: center;"href="http://localhost:4200/reports" class="btn btn-success" >WAY TO TAX REPORTS</a>
-</div>
+                              <div class="form-group row">
+                                  <label for="name" class="col-md-4 col-form-label text-md-right">Age</label>
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required>
+                                  </div>
+                              </div>
 
- 
+                              <div class="form-group row">
+                                  <label for="name" class="col-md-4 col-form-label text-md-right">Life Insurance Premium</label>
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control" id="LIC" required [(ngModel)]="customer.LifeInsurancePremium" name="LIC" required>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right"> Public Provident Fund (PPF)
+                                </label>
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" id="providentfund" required [(ngModel)]="customer.PublicProvidentFund" name="providentfund" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="name" class="col-md-4 col-form-label text-md-right">Employees’ Provident Fund (EPF)</label>
+                              <div class="col-md-6">
+                                  <input type="text" class="form-control" id="eprovident" required [(ngModel)]="customer.EmployeesProvidentFund" name="eprovident" required>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right"> Equity Linked Savings Scheme (ELSS)</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="ELSS" required [(ngModel)]="customer.EquityLinkedSavingsScheme" name="ELSS" required>
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                          <label for="name" class="col-md-4 col-form-label text-md-right"> Unit Linked Insurance Plan (ULIP)</label>
+                          <div class="col-md-6">
+                              <input type="text" class="form-control" id="ULIP" required [(ngModel)]="customer.UnitLinkedInsurancePlan" name="ULIP" required>
+                          </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="name" class="col-md-4 col-form-label text-md-right">Tax Saver Fixed Deposits</label>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" id="taxsaver" required [(ngModel)]="customer.TaxSaverFixedDeposits" name="taxsaver" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                      <label for="name" class="col-md-4 col-form-label text-md-right">National Pension Scheme (NPS)</label>
+                      <div class="col-md-6">
+                          <input type="text" class="form-control" id="NPS" required [(ngModel)]="customer.NationalPensionScheme" name="NPS" required>
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="name" class="col-md-4 col-form-label text-md-right">Home Loan Principal Repayment</label>
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" id="hlpr" required [(ngModel)]="customer.HomeLoanPrincipalRepayment" name="hlpr" required>
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label for="name" class="col-md-4 col-form-label text-md-right"> Sukanya Samriddhi Yojana</label>
+                  <div class="col-md-6">
+                      <input type="text" class="form-control" id="ssy" required [(ngModel)]="customer.SukanyaSamriddhiYojana" name="ssy" required>
+                  </div>
+              </div>
+              <div class="form-group row">
+                <label for="name" class="col-md-4 col-form-label text-md-right">Senior Citizens Savings Scheme</label>
+                <div class="col-md-6">
+                    <input type="text" class="form-control" id="scss" required [(ngModel)]="customer.SeniorCitizensSavingsScheme" name="scss" required>
+                </div>
+            </div>
+            <div class="form-group row">
+              <label for="name" class="col-md-4 col-form-label text-md-right">National Savings Certificate</label>
+              <div class="col-md-6">
+                  <input type="text" class="form-control" id="ncd" required [(ngModel)]="customer.NationalSavingsCertificate" name="nsc" required>
+              </div>
+          </div>
+          <div class="form-group row">
+            <label for="name" class="col-md-4 col-form-label text-md-right">Select Vendors</label>
+            <div class="col-md-6">
+              <select id="Vendors" class="form-control"  required [(ngModel)]="customer.Vendors" name="Vendors" required>
+                <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
+            </select>
+            </div>
+        </div>
+
+                                  <div class="col-md-6 offset-md-4">
+                                      <button type="submit" class="btn btn-primary">
+                                      Submit
+                                      </button>
+                                  </div>
+
+                          </form>
+                          <a  style="text-align: center;"href="http://localhost:4200/dropdown" class="btn btn-success" >WAY TO TAX REPORTS</a>
+                      </div>
+                  </div>
+          </div>
+      </div>
+  </div>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </body>
+      </html>
 
 

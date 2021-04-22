@@ -1,0 +1,14 @@
+
+  <button style="margin-left: 70pc;" type="submit" class="btn btn-warning" (click)="downloadpdf()">Print</button>
+<div id="table" class="login">
+<h1 style="text-align: center;">TAX REPORTS ON SECTION 80-D</h1><br><br>
+<div  *ngFor="let customer of customers" style="width: 300px;">
+  <app-customer-details80D [customer]='customer'></app-customer-details80D>
+</div>
+</div>
+<div class="login1">
+   <div  style="margin-top:20px;">
+  <button type="button" class="button btn-danger" (click)='deleteCustomers()'>Delete</button>
+</div>
+</div>
+

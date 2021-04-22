@@ -1,63 +1,42 @@
+<html>
+  <head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+      <div class="container">
+      <a class="navbar-brand nbr" href="http://localhost:4200/company-page">Paytax</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
 
-<div class="center">
-<div class="row">
-  <div class="offset-sm-4 col-sm-4">
-    
-<div class="card text-blank">
- <div class="card-body">
-  <div class="card-title text-center">
-    
-<div class="card text-blank">
-   
-    <div class="authBlock">
-      <h3>Sign Up</h3>
-   
-      <div class="formGroup">
-        <input type="email" class="formControl" placeholder="Email Address" #userEmail required>
       </div>
+  </nav>
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
 
-      <div class="formGroup">
-        <input type="password" class="formControl" placeholder="Password" #userPwd required>
-      </div>
-
-      <div class="formGroup">
-        <input type="button" class="btn btn-block btn-success" value="Sign Up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-      </div>
-
-      <div class="formGroup">
-        <span class="or"><span class="orInner"> </span></span>
-      </div>
-
-      
-      
+    <!-- Icon -->
+    <div class="fadeIn first signup">
+         Sign Up
     </div>
 
-    <div class="redirectToLogin">
-      <span>Already have an account? <span class="redirect" class="btn btn-block btn-warning"routerLink="/sign-in">Log In</span></span>
+    <!-- Login Form -->
+    <form>
+      <input type="email" id="login" class="fadeIn second" name="login" placeholder="Email Address" #userEmail required>
+      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" #userPwd required>
+      <input type="submit" class="fadeIn fourth" value="Sign-up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <span>Already a member? <a class="underlineHover" href="http://localhost:4200/sign-in"> Login</a> </span><br>
+
     </div>
+
   </div>
-
 </div>
-     </div>
-     </div>
-                     
-    </div> 
-
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</body>
+</html>

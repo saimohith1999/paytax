@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -10,6 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
 
 
+
+
   ngOnInit() { }
 
+
 }
+

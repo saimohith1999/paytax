@@ -1,0 +1,74 @@
+<head>
+  <style>
+  body {
+    background-color: coral;
+  }
+  </style>
+  </head>
+  <body>
+
+
+<div class="row">
+  <div class="offset-sm-4 col-sm-4">
+
+
+
+<div class="center">
+<h3>SECTION 80D</h3>
+<div [hidden]="submitted" style="width: 300px;">
+  <form name="myform" (ngSubmit)="onSubmit()"onsubmit="return validateForm()" method="post">
+
+
+    <div class="form-group">
+      <label for="name"> Full Name</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name" required>
+
+    </div>
+
+    <div class="form-group">
+      <label for="name">Age</label>
+      <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required>
+
+    </div>
+    <div class="form-group">
+      <label for="name">Payment for medical insurance premium (mode other than cash) /contribution to CGHS</label>
+      <input type="text" class="form-control" id="medical" required [(ngModel)]="customer.medical" name="medical" required>
+
+    </div>
+
+    <div class="form-group" >
+      <label for="pan">Payment of medical insurance premium for resident Sr. Citizen – (mode other than cash)</label>
+      <input type="text" class="form-control" id="citizen" required [(ngModel)]="customer.citizen" name="citizen" required>
+
+    </div>
+    <div class="form-group">
+      <label for="income">Medical expenditure on the health of Resident very senior citizen for whom no amount is paid to effect/keep in force health) ( mode of payment other than cash )</label>
+      <input type="text" class="form-control" id="resident" required [(ngModel)]="customer.resident" name="resident" required>
+    </div>
+    <div class="form-group">
+      <label for="savings">Payment made for preventive health check up</label>
+      <input type="text" class="form-control" id="preventive" required [(ngModel)]="customer.preventive" name="preventive" required>
+    </div>
+
+    <div class="form-group">
+      <label for="section">Select Vendors</label>
+      <select id="Vendors" class="form-control"  required [(ngModel)]="customer.Vendors" name="Vendors" required>
+        <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
+    </select>
+    </div>
+
+
+
+
+
+    <button type="submit" class="btn btn-danger">Submit</button>
+  </form>
+</div>
+</div>
+<div>
+  <a  style="text-align: center;"href="http://localhost:4200/dropdown" class="btn btn-success" >WAY TO TAX REPORTS</a>
+</div>
+
+
+
+

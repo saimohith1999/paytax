@@ -1,45 +1,94 @@
 
-<div class="login" *ngIf="customer">
+<div class="login435" *ngIf="customer">
+  <div class="form-group row">
+    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name </label>
+    <div class="col-md-6">
+     {{customer.name}}
+  </div>
+</div>
+
+<div class="form-group row">
+    <label for="name" class="col-md-4 col-form-label text-md-right">Age</label>
+    <div class="col-md-6">
+      {{customer.age}}
+  </div>
+</div>
+
+<div class="form-group row">
+    <label for="name" class="col-md-4 col-form-label text-md-right">Life Insurance Premium</label>
+    <div class="col-md-6">
+      {{customer.LifeInsurancePremium}}
+  </div>
+</div>
+<div class="form-group row">
+  <label for="name" class="col-md-4 col-form-label text-md-right"> Public Provident Fund (PPF)</label>
+  <div class="col-md-6">
+    {{customer.PublicProvidentFund}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right">Employees’ Provident Fund (EPF)</label>
+<div class="col-md-6">
+  {{customer.EmployeesProvidentFund}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right"> Equity Linked Savings Scheme (ELSS)</label>
+<div class="col-md-6">
+  {{customer.EquityLinkedSavingsScheme}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right"> Unit Linked Insurance Plan (ULIP)</label>
+<div class="col-md-6">
+  {{customer.UnitLinkedInsurancePlan}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right">Tax Saver Fixed Deposits</label>
+<div class="col-md-6">
+  {{customer.TaxSaverFixedDeposits}}</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right">National Pension Scheme (NPS)</label>
+<div class="col-md-6">
+  {{customer.NationalPensionScheme}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right">Home Loan Principal Repayment</label>
+<div class="col-md-6">
+  {{customer.HomeLoanPrincipalRepayment}}</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right"> Sukanya Samriddhi Yojana</label>
+<div class="col-md-6">
+  {{customer.SukanyaSamriddhiYojana}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right">Senior Citizens Savings Scheme</label>
+<div class="col-md-6">
+  {{customer.SeniorCitizensSavingsScheme}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right">National Savings Certificate</label>
+<div class="col-md-6">
+  {{customer.NationalSavingsCertificate}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right">Third Party Vendors</label>
+<div class="col-md-6">
+  {{customer.Vendors}}</div>
+</div>
 
 
-         <div>
-                                     <label style="text-align:center">First Name: </label> {{customer.name}}
-                                   </div>
-                                   
-                                   <div>
-                                    <label style="text-align:center">Age: </label> {{customer.age}}
-                                  </div>
-                                  <div>
-                                    <label style="text-align:center"> Deposit:</label> {{customer.deposit}}
-                                  </div>
-                                  <div>
-                                    <label style="text-align:center"> LIC:</label> {{customer.LIC}}
-                                  </div>
-                                  <div>
-                                    <label style="text-align:center"> ProvidentFund:</label> {{customer.providentfund}}
-                                  </div>
-                                  
-                                  
-                                  <div>
-                                    <label style="text-align:center"> Health Insurance:</label> {{customer.health}}
-                                  </div>
-                                  
-                                  <div>
-                                    <label style="text-align:center"> Third-party Vendors:</label> {{customer.Vendors}}
-                                  </div>
+<span class="button is-small btn-primary" *ngIf='customer.active' (click)='updateActive(false)'>Inactive</span>
 
-                                   <div>
-                                     <label>Active: </label> {{customer.active}}
-                                   </div>
-                                  
- 
-                                  
-                                   <span class="button is-small btn-primary" *ngIf='customer.active' (click)='updateActive(false)'>Inactive</span>
-                                  
-                                   <span class="button is-small btn-primary" *ngIf='!customer.active' (click)='updateActive(true)'>Active</span>
-                                  
-                                   <span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
-                                  
-                                   <hr/>
- </div>
-                                 
+<span class="button is-small btn-primary" *ngIf='!customer.active' (click)='updateActive(true)'>Active</span>
+
+<span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
+
+</div>

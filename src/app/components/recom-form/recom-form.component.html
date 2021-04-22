@@ -1,5 +1,3 @@
-
-
 <html>
   <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -7,18 +5,48 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </head>
-<body class="container">
+<body>
+  <section id="navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Paytax</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/profile">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/dashboard">User Profile</a>
+        </li>
+        <li class="nav-item article active">
+          <a class="nav-link" href="http://localhost:4200/dropdown">Tax Reports</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/recom-form">Create Form</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/company-page">Logout</a>
+        </li>
+      </ul>
+      <span class="navbar-text">
 
+      </span>
+    </div>
+  </nav>
+
+    </section>
   <form>
 
-    <label >Enter Payable tax</label>
+    <label >Enter Total Income</label>
     <input type="text" #box><br>
   <button type="submit" class="btn btn-primary butt" (click) ="getVal(box.value)">Submit</button>
   <br>
   <br>
 
-  <ng-template [ngIf]="currentVal >='10000' && currentVal <= '20000'">
-    <a   href="http://localhost:4200/section-80c">State Bank Of India(Section 80C)</a><br>
+  <ng-template [ngIf]="currentVal >=100000 && currentVal < 250000">
+    <a   href="http://localhost:4200/section-80ccd">Bank Of Baroda</a><br>
     <section id="bodycontent">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1000" >
       <ol class="carousel-indicators">
@@ -28,7 +56,7 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active coro1">
-          <img class="d-block w-100" src="assets/i.jpeg" alt="First slide">
+          <img class="d-block w-100" src="assets/baroda-tax.png" alt="First slide">
         </div>
         <div class="carousel-item">
           <img class="d-block w-100" src="assets/g.jpeg" alt="Second slide">
@@ -44,13 +72,12 @@
         <span class="sr-only">Next</span>
       </a>
     </div>
-
     </section>
     <a href="http://localhost:4200/section" class="btn-warning"> Or Other Sections</a>
 
   </ng-template>
-  <ng-template [ngIf]="currentVal >='30000' && currentVal < '50000'">
-    <a  href="http://localhost:4200/section-80d">HDFC(Section 80D)</a><br>
+  <ng-template [ngIf]="currentVal >=250000 && currentVal < 500000">
+    <a  href="http://localhost:4200/section-80d">HDFC</a><br>
 
     <div id="carouselExampleIndicators"
     class="carousel slide" data-ride="carousel"
@@ -72,11 +99,15 @@
 
 </div>
     <a href="http://localhost:4200/section" class="btn-warning"> Or Other Sections</a>
+    <hr>
+   <p>Total Income:- {{currentVal}}</p>
+    <p>Deductions:- {{deduction1}}</p>
 
+    <p class="btn-success">Saved Tax:- {{ ((currentVal-basicexemption)*0.05)- ((currentVal-deduction1) - basicexemption)*0.05}}</p>
 
   </ng-template>
-  <ng-template [ngIf]="currentVal >='60000' && currentVal <= '80000'">
-    <a   href="http://localhost:4200/section-80ccd">Bank Of Baroda(Section 80CCD)</a><br>
+  <ng-template [ngIf]="currentVal >=500000 && currentVal <= 850000">
+    <a   href="http://localhost:4200/add">State Bank of India<br></a>
     <div id="carouselExampleIndicators"
     class="carousel slide" data-ride="carousel"
     data-interval="1000">
@@ -90,14 +121,17 @@
    </ol>
    <div class="carousel-inner">
        <div class="carousel-item active">
-           <img class="d-block w-100" src="assets/baroda-tax.png" alt="First slide">
+           <img class="d-block w-100" src="assets/sbi-tax.png" alt="First slide">
        </div>
 
    </div>
 
 </div>
     <a href="http://localhost:4200/section" class="btn-warning"> Or Other Sections</a>
+<p>Total Income:- {{currentVal}}</p>
+    <p>Deductions:- {{deduction}}</p>
 
+    <p class="btn-success">Saved Tax:- {{((currentVal-basicexemption)*0.20) - (((currentVal-deduction) - basicexemption)*0.05) }}</p>
   </ng-template>
 
 </form>

@@ -1,7 +1,8 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // Reactive For
 import {AngularFireStorageModule} from '@angular/fire/storage';
 
@@ -40,13 +41,16 @@ import { CompanyPageComponent } from './components/company-page/company-page.com
 import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
 import { CustomersListComponent } from './customers/customers-list/customers-list.component';
 import { CreateCustomerComponent } from './customers/create-customer/create-customer.component';
+import { CreateCustomer80DComponent } from './customers-80d/create-customer80d/create-customer80d.component';
+import { CustomersList80DComponent } from './customers-80d/customers-list80d/customers-list80d.component';
+import {CustomerDetails80DComponent} from './customers-80d/customer-details80d/customer-details80d.component';
 import { TaxComponent } from './customers/tax/tax.component';
 import { FormComponent } from './components/form/form.component';
 import { UserprofileComponent } from './components/userprofile/userprofile.component';
 import { SectionComponent } from './components/section/section.component';
 import { Section80CCDComponent } from './components/section80-ccd/section80-ccd.component';
 import { SectionDComponent } from './components/section-d/section-d.component';
-
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 
 
@@ -71,10 +75,11 @@ import { SectionDComponent } from './components/section-d/section-d.component';
     Section80CCDComponent,
     recomComponent,
     Section80CComponent,
-    SectionDComponent
-
-
-
+    SectionDComponent,
+    DropdownComponent,
+    CustomersList80DComponent,
+    CreateCustomer80DComponent,
+    CustomerDetails80DComponent
   ],
   imports: [
     BrowserModule,
@@ -85,10 +90,10 @@ import { SectionDComponent } from './components/section-d/section-d.component';
     AngularFirestoreModule,
     ReactiveFormsModule,
     FormsModule,
-AngularFireStorageModule,
-MatSelectModule
-
-
+    AngularFireStorageModule,
+    MatSelectModule,
+    CommonModule,
+    NgbModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
