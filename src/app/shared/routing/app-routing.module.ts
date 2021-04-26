@@ -1,7 +1,7 @@
+import { AboutUsComponent } from './../../components/about-us/about-us.component';
 
 import { DropdownComponent } from './../../components/dropdown/dropdown.component';
 
-import { Section80CCDComponent } from './../../components/section80-ccd/section80-ccd.component';
 
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -19,15 +19,16 @@ import {TaxComponent } from '../../customers/tax/tax.component';
 import{UserprofileComponent} from '../../components/userprofile/userprofile.component';
 import{SectionComponent} from '../../components/section/section.component';
 import {recomComponent} from  '../../components/recom-form/recom-form.component';
-import {Section80CComponent} from  '../../components/section-80c/section-80c.component';
-import {SectionDComponent} from '../../components/section-d/section-d.component';
 import { AuthGuard } from "../../shared/guard/auth.guard";
 import { EmployeeProfilesComponent } from 'src/app/components/employee-profiles/employee-profiles.component';
 import{CompanyPageComponent} from 'src/app/components/company-page/company-page.component';
 import {CreateCustomer80DComponent} from '../../customers-80d/create-customer80d/create-customer80d.component';
+import { CreateCustomer80CCDComponent } from '../../customers-80ccd/create-customer80ccd/create-customer80ccd.component';
+import {CustomersList80CCDComponent} from './../../customers-80ccd/customers-list80ccd/customers-list80ccd.component';
+
 const routes: Routes = [
   { path: '', redirectTo: '/company-page', pathMatch: 'full'},
-  {path:'company-page',component:CompanyPageComponent},
+  {path:'home-page',component:CompanyPageComponent},
   { path: 'sign-in', component: SignInComponent},
   { path: 'sign-up', component: SignUpComponent},
   { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuard] },
@@ -36,18 +37,17 @@ const routes: Routes = [
   {path:'employee-profiles',component:EmployeeProfilesComponent},
   { path: 'reports-c', component: CustomersListComponent },
   { path: 'reports-d', component: CustomersList80DComponent },
+  {path:'reports-ccd',component:CustomersList80CCDComponent},
   { path: 'add', component: CreateCustomerComponent },
   { path: 'tax', component: TaxComponent },
   { path: 'register-form', component: FormComponent },
   {path:'profile',component:UserprofileComponent},
   {path:'section',component:SectionComponent},
  {path: 'recom-form',component:recomComponent},
-{path:'section-80c',component:Section80CComponent},
-{path:'section-80ccd',component:Section80CCDComponent},
-{path:'section-80d',component:SectionDComponent},
 {path:'dropdown',component:DropdownComponent},
-{path:'addsection80-d',component:CreateCustomer80DComponent}
-
+{path:'addsection80-d',component:CreateCustomer80DComponent},
+{path:'addsection80-ccd',component:CreateCustomer80CCDComponent},
+{path:'about-us',component:AboutUsComponent}
 ];
 
 @NgModule({

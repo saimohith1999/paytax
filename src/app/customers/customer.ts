@@ -6,5 +6,6 @@ export class Customer {
                                    savings:number;
                                    vendor:string;
                                    active = true;
+                                   Assessmentyear:string;
                                  }
-                                 
+

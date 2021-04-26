@@ -1,7 +1,9 @@
 export class Customer {
                                    key: string ;
                                    FullName: string;
-                                   aadharcard: number ;
+                                   Aadhar: number ;
                                    Age:number;
                                    active = true;
-                                 }   
+                                   Gender:string;
+                                   dob:string;
+                                 }

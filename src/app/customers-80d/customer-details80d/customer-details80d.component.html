@@ -1,44 +1,53 @@
 
-<div class="login" *ngIf="customer">
+<div class="login435" *ngIf="customer">
+  <div class="form-group row">
+    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name </label>
+    <div class="col-md-6">
+     {{customer.name}}
+  </div>
+</div>
+
+<div class="form-group row">
+    <label for="name" class="col-md-4 col-form-label text-md-right">Age</label>
+    <div class="col-md-6">
+      {{customer.age}}
+  </div>
+</div>
+<div class="form-group row">
+  <label for="name" class="col-md-4 col-form-label text-md-right"> Assessment Year</label>
+  <div class="col-md-6">
+    {{customer.Assessmentyear}}
+</div>
+</div>
+<div class="form-group row">
+    <label for="name" class="col-md-4 col-form-label text-md-right">Payment for medical insurance premium (mode other than cash) /contribution to CGHS</label>
+    <div class="col-md-6">
+      {{customer.PaymentformedicalinsurancepremiumcontributiontoCGHS}}
+  </div>
+</div>
+<div class="form-group row">
+  <label for="name" class="col-md-4 col-form-label text-md-right"> Payment of medical insurance premium for resident Sr. Citizen – (mode other than cash)</label>
+  <div class="col-md-6">
+    {{customer.PaymentofmedicalinsurancepremiumforresidentSrCitizen}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right">Payment made for preventive health check up</label>
+<div class="col-md-6">
+  {{customer.Paymentmadeforpreventivehealthcheckup}}
+</div>
+</div>
+<div class="form-group row">
+<label for="name" class="col-md-4 col-form-label text-md-right"> Medical expenditure on the health of Resident very senior citizen for whom no amount is paid to effect/keep in force health) ( mode of payment other than cash )</label>
+<div class="col-md-6">
+  {{customer.MedicalexpenditureonthehealthofResidentveryseniorcitizenforwhomnoamountispaidtoeffectkeepinforcehealth}}
+</div>
+</div>
 
 
-         <div>
-                                     <label style="text-align:center">First Name: </label> {{customer.name}}
-                                   </div>
-
-                                   <div>
-                                    <label style="text-align:center">Age: </label> {{customer.age}}
-                                  </div>
-                                  <div>
-                                    <label style="text-align:center">Payment for medical insurance premium (mode other than cash) /contribution to CGHS</label> {{customer.medical}}
-                                  </div>
-                                  <div>
-                                    <label style="text-align:center">Payment of medical insurance premium for resident Sr. Citizen – (mode other than cash) </label> {{customer.citizen}}
-                                  </div>
-                                  <div>
-                                    <label style="text-align:center">Medical expenditure on the health of Resident very senior citizen for whom no amount is paid to effect/keep in force health) ( mode of payment other than cash ) </label> {{customer.resident}}
-                                  </div>
-
-
-                                  <div>
-                                    <label style="text-align:center">Payment made for preventive health check up </label> {{customer.preventive}}
-                                  </div>
-
-                                  <div>
-                                    <label style="text-align:center"> Third-party Vendors:</label> {{customer.Vendors}}
-                                  </div>
-
-                                   <div>
-                                     <label>Active: </label> {{customer.active}}
-                                   </div>
 
 
 
-                                   <span class="button is-small btn-primary" *ngIf='customer.active' (click)='updateActive(false)'>Inactive</span>
+<span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
 
-                                   <span class="button is-small btn-primary" *ngIf='!customer.active' (click)='updateActive(true)'>Active</span>
-
-                                   <span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
-
-                                   <hr/>
- </div>
+</div>

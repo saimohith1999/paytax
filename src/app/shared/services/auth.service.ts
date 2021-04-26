@@ -17,7 +17,7 @@ export class AuthService {
     public afAuth: AngularFireAuth, // Inject Firebase auth service
     public router: Router,
     public ngZone: NgZone // NgZone service to remove outside scope warning
-    
+
   ) {
     /* Saving user data in localstorage when
     logged in and setting up null when logged out */
@@ -59,12 +59,12 @@ export class AuthService {
         window.alert(error.message)
       })
   }
-  
+
 
   // Send email verfificaiton when new user sign up
   // Email verification when new user register
   SendVerificationMail() {
-    return this.afAuth.currentUser.then(u => 
+    return this.afAuth.currentUser.then(u =>
       u.sendEmailVerification())
     .then(() => {
       this.router.navigate(['verify-email-address']);
@@ -134,5 +134,6 @@ export class AuthService {
       this.router.navigate(['sign-in']);
     })
   }
+
 
 }

@@ -51,9 +51,10 @@ import { SectionComponent } from './components/section/section.component';
 import { Section80CCDComponent } from './components/section80-ccd/section80-ccd.component';
 import { SectionDComponent } from './components/section-d/section-d.component';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
-
-
-
+import {CreateCustomer80CCDComponent} from './customers-80ccd/create-customer80ccd/create-customer80ccd.component';
+import {CustomerDetails80CCDComponent} from './customers-80ccd/customer-details80ccd/customer-details80ccd.component';
+import {CustomersList80CCDComponent} from './customers-80ccd/customers-list80ccd/customers-list80ccd.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,12 @@ import { DropdownComponent } from './components/dropdown/dropdown.component';
     DropdownComponent,
     CustomersList80DComponent,
     CreateCustomer80DComponent,
-    CustomerDetails80DComponent
+    CustomerDetails80DComponent,
+    CreateCustomer80CCDComponent,
+    CustomerDetails80CCDComponent,
+    CustomersList80CCDComponent,
+    AboutUsComponent
+
   ],
   imports: [
     BrowserModule,

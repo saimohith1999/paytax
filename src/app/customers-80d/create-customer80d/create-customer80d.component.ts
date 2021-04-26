@@ -16,7 +16,8 @@ export class CreateCustomer80DComponent implements OnInit {
   submitted = false;
   countries: string[] = ['UPSTOCKS', 'MORE-INVEST', 'MONEY-WAY'];
   default: string = '';
-
+  warn:boolean=true;
+  alert:boolean=false;
   constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
@@ -35,6 +36,11 @@ export class CreateCustomer80DComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     this.save();
+    this.alert=true;
+    this.warn=false;
+  }
+  closeAlert(){
+    this.alert=false
   }
  // let pdfName = 'tax_report';
   //var doc = new jsPDF();

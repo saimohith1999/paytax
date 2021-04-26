@@ -1,74 +1,171 @@
+<html>
 <head>
-  <style>
-  body {
-    background-color: coral;
-  }
-  </style>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+
+
+    <link rel="icon" href="Favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
   </head>
   <body>
 
+    <section id="navigation">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="http://localhost:4200/section">SECTIONS</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/add">SECTION 80C</a>
+          </li>
+          <li class="nav-item article active">
+            <a class="nav-link" href="http://localhost:4200/addsection80-d">SECTION 80D</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/addsection80-ccd">SECTION 80CCD</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
 
-<div class="row">
-  <div class="offset-sm-4 col-sm-4">
+        </span>
+
+      </div>
+    </nav>
+      </section>
+
+<main class="my-form">
+  <div class="cotainer">
+      <div class="row justify-content-center">
+          <div class="col-md-8">
+                  <div class="card">
+                      <div class="card-header">Section 80D</div>
+                      <div class="card-body">
+                          <form name="myform" (ngSubmit)="onSubmit()"onsubmit="return validateForm()" method="post">
+
+                            <div class="form-group row">
+                                  <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name*</label>
+                                  <div class="col-md-6">
+                                      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name"  required minlength="4" appForbiddenName="bob" #name="ngModel" required>
+                                      <div *ngIf="warn">
+                                        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                                          class="alert alert-danger">
+
+                                           <div *ngIf="name.errors.required">
+                                              Name is required.
+                                              </div>
+                                              <div *ngIf="name.errors.minlength">
+                                              Name must be at least 4 characters long.
+                                              </div>
+                                              <div *ngIf="name.errors.forbiddenName">
+                                              Name cannot be Bob.
+                                              </div>
+
+                                              </div>
+                                              </div>
+                                    </div>
+                              </div>
+
+                              <div class="form-group row">
+                                  <label for="name" class="col-md-4 col-form-label text-md-right">Age*</label>
+                                  <div class="col-md-6">
+                                    <input type="number" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required maxlength="2" required class="form-control" #age="ngModel">
+                                    <div *ngIf="warn">
+                                      <div *ngIf="age.invalid && (age.dirty || age.touched)"
+                                      class="alert alert-danger">
+
+                                       <div *ngIf="age.errors.required">
+                                          Age is required.
+                                          </div>
+                                          <div *ngIf="age.errors.maxlength">
+                                          Age cannot be more than 2 digits.
+                                          </div>
+                                          </div>
+                                          </div>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="user_name" class="col-md-4 col-form-label text-md-right">Assessment Year*</label>
+                                <div class="col-md-6">
+                                    <input type="date" id="dob" class="form-control" [(ngModel)]="customer.Assessmentyear" name="dob" required [(ngModel)]="customer.dob" name="dob" #dob="ngModel" required>
+                                    <div *ngIf="warn">
+                                      <div *ngIf="dob.invalid && (dob.dirty ||dob .touched)"
+                                      class="alert alert-danger">
+
+                                       <div *ngIf="dob.errors.required">
+                                          Date of Birth is required.
+                                          </div>
+
+                                          </div>
+                                          </div>
+                                  </div>
+                            </div>
+                              <div class="form-group row">
+                                  <label for="name" class="col-md-4 col-form-label text-md-right">Payment for medical insurance premium (mode other than cash) /contribution to CGHS</label>
+                                  <div class="col-md-6">
+                                      <input type="number" class="form-control" id="cghs" required [(ngModel)]="customer.PaymentformedicalinsurancepremiumcontributiontoCGHS" name="cghs" required>
+                                  </div>
+                              </div>
+                              <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right"> Payment of medical insurance premium for resident Sr. Citizen – (mode other than cash)
+                                </label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" id="providentfund" required [(ngModel)]="customer.PaymentofmedicalinsurancepremiumforresidentSrCitizen" name="providentfund" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                              <label for="name" class="col-md-4 col-form-label text-md-right">Payment made for preventive health check up</label>
+                              <div class="col-md-6">
+                                  <input type="number" class="form-control" id="eprovident" required [(ngModel)]="customer.Paymentmadeforpreventivehealthcheckup" name="eprovident" required>
+                              </div>
+                          </div>
+                          <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right"> Medical expenditure on the health of Resident very senior citizen for whom no amount is paid to effect/keep in force health) ( mode of payment other than cash )</label>
+                            <div class="col-md-6">
+                                <input type="number" class="form-control" id="ELSS" required [(ngModel)]="customer.MedicalexpenditureonthehealthofResidentveryseniorcitizenforwhomnoamountispaidtoeffectkeepinforcehealth" name="ELSS" required>
+                            </div>
+                        </div>
 
 
 
-<div class="center">
-<h3>SECTION 80D</h3>
-<div [hidden]="submitted" style="width: 300px;">
-  <form name="myform" (ngSubmit)="onSubmit()"onsubmit="return validateForm()" method="post">
+                                  <div class="col-md-6 offset-md-4">
+                                      <button type="submit" [disabled]="!customer.name || !customer.age ||!customer.Assessmentyear || !customer.PaymentformedicalinsurancepremiumcontributiontoCGHS && !customer.PaymentofmedicalinsurancepremiumforresidentSrCitizen && !customer.Paymentmadeforpreventivehealthcheckup && !customer.MedicalexpenditureonthehealthofResidentveryseniorcitizenforwhomnoamountispaidtoeffectkeepinforcehealth" class="btn btn-primary">
+                                      Submit
+                                      </button>
 
+                                  </div>
+                                  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show dist" role="alert">
+                                    <strong>Success!</strong> Form has been submitted successfully.
+                                    <button (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
 
-    <div class="form-group">
-      <label for="name"> Full Name</label>
-      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name" required>
+                          </form>
+                          <a  style="text-align: center;"href="http://localhost:4200/dropdown" class="btn btn-success" >WAY TO TAX REPORTS</a>
+                      </div>
+                  </div>
+          </div>
+      </div>
+  </div>
 
-    </div>
+</main>
 
-    <div class="form-group">
-      <label for="name">Age</label>
-      <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required>
-
-    </div>
-    <div class="form-group">
-      <label for="name">Payment for medical insurance premium (mode other than cash) /contribution to CGHS</label>
-      <input type="text" class="form-control" id="medical" required [(ngModel)]="customer.medical" name="medical" required>
-
-    </div>
-
-    <div class="form-group" >
-      <label for="pan">Payment of medical insurance premium for resident Sr. Citizen – (mode other than cash)</label>
-      <input type="text" class="form-control" id="citizen" required [(ngModel)]="customer.citizen" name="citizen" required>
-
-    </div>
-    <div class="form-group">
-      <label for="income">Medical expenditure on the health of Resident very senior citizen for whom no amount is paid to effect/keep in force health) ( mode of payment other than cash )</label>
-      <input type="text" class="form-control" id="resident" required [(ngModel)]="customer.resident" name="resident" required>
-    </div>
-    <div class="form-group">
-      <label for="savings">Payment made for preventive health check up</label>
-      <input type="text" class="form-control" id="preventive" required [(ngModel)]="customer.preventive" name="preventive" required>
-    </div>
-
-    <div class="form-group">
-      <label for="section">Select Vendors</label>
-      <select id="Vendors" class="form-control"  required [(ngModel)]="customer.Vendors" name="Vendors" required>
-        <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
-    </select>
-    </div>
-
-
-
-
-
-    <button type="submit" class="btn btn-danger">Submit</button>
-  </form>
-</div>
-</div>
-<div>
-  <a  style="text-align: center;"href="http://localhost:4200/dropdown" class="btn btn-success" >WAY TO TAX REPORTS</a>
-</div>
-
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    </body>
+      </html>
 
 

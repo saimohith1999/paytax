@@ -21,8 +21,9 @@
     <title>Paytax</title>
 </head>
 <body>
+  <header class="position-absolute w-100">
 
-<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+<nav class="navbar navbar-expand-md navbar-light clr">
     <div class="container">
     <a class="navbar-brand nbr" href="#">Paytax</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,61 +43,165 @@
     </div>
     </div>
 </nav>
+</header>
+<!-- <header class="position-absolute w-100">
+  <div class="container">
+
+  </div>
+      <nav class="navbar navbar-expand-md navbar-light">
+          <a class="navbar-brand">Paytax</a>
+          <div class="group d-flex align-items-center">
+              <button class="navbar-toggler" type="button" data-toggle="collapse"
+                  data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation"><span
+                      class="navbar-toggler-icon"></span></button>
+              <a class="login-icon d-sm-none" href="#"><i class="fa fa-user"></i></a>
+              <a class="cart" href="#"><i class=""></i></a>
+          </div>
+          <a class="search-icon d-none d-md-block" href="#"><i class=""></i></a>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="d-flex aic ">
+
+          </ul>
+
+          </div>
+      </nav>
+
+</header> -->
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <main class="my-form">
     <div class="cotainer">
         <div class="row justify-content-center">
             <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">Register</div>
+                        <div class="card-header crd">Register</div>
                         <div class="card-body">
                             <form name="my-form" (ngSubmit)="onSubmit()">
+
                                 <div class="form-group row">
-                                    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
+
+                                    <label for="full_name"  class="col-md-4 col-form-label text-md-right">Full Name*</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="name" required [(ngModel)]="customer.FullName" name="name" #name required>
+                                        <input type="text" id="name"  class="form-control" [(ngModel)]="customer.FullName" name="name"  required minlength="4" appForbiddenName="bob" #name="ngModel" required>
+                                     <div *ngIf="warn">
+                                      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                                        class="alert alert-danger">
+
+                                         <div *ngIf="name.errors.required">
+                                            Name is required.
+                                            </div>
+                                            <div *ngIf="name.errors.minlength">
+                                            Name must be at least 4 characters long.
+                                            </div>
+                                            <div *ngIf="name.errors.forbiddenName">
+                                            Name cannot be Bob.
+                                            </div>
+
+                                            </div>
+                                            </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="Aadhar" class="col-md-4 col-form-label text-md-right">Aadhar ID</label>
+                                    <label for="Aadhar" class="col-md-4 col-form-label text-md-right">Aadhar ID*</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="age" required [(ngModel)]="customer.Aadhar" name="age" required>
-                                    </div>
+                                        <input type="type" id="aadhar" class="form-control" required [(ngModel)]="customer.Aadhar" name="aadhar" required minlength="12" #aadhar="ngModel" required>
+                                        <div *ngIf="warn">
+                                        <div *ngIf="aadhar.invalid && (aadhar.dirty || aadhar.touched)"
+                                        class="alert alert-danger">
+
+                                         <div *ngIf="aadhar.errors.required">
+                                            Aadhar ID is required.
+                                            </div>
+                                            <div *ngIf="aadhar.errors.minlength">
+                                            Aadhar ID must be at least 12 digits long.
+                                            </div>
+
+                                            <div *ngIf="aadhar.errors.type">
+                                              Adhaar ID cannot be text.
+                                              </div>
+                                          </div>
+                                            </div>
+                                      </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">Date of birth</label>
+                                    <label for="user_name" class="col-md-4 col-form-label text-md-right">Date of birth*</label>
                                     <div class="col-md-6">
-                                        <input type="date" id="dob" class="form-control" [(ngModel)]="customer.dob" name="dob" required>
-                                    </div>
+                                        <input type="date" id="dob" class="form-control" [(ngModel)]="customer.dob" name="dob" required [(ngModel)]="customer.dob" name="dob" #dob="ngModel" required>
+                                        <div *ngIf="warn">
+                                          <div *ngIf="dob.invalid && (dob.dirty ||dob .touched)"
+                                          class="alert alert-danger">
+
+                                           <div *ngIf="dob.errors.required">
+                                              Date of Birth is required.
+                                              </div>
+
+                                              </div>
+                                              </div>
+                                      </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Gender</label>
+                                    <label for="phone_number" class="col-md-4 col-form-label text-md-right">Gender*</label>
                                     <div class="col-md-6">
-                                      <select id="gender" class="form-control"  required [(ngModel)]="customer.Gender" name="gender" required>
+                                      <select id="gender" class="form-control"  required [(ngModel)]="customer.Gender"  class="form-control" required [(ngModel)]="customer.gender" name="gender" #gender="ngModel" required>
                                         <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
                                     </select>
+                                    <div *ngIf="warn">
+                                    <div *ngIf="gender.invalid && (gender.dirty || gender.touched)"
+                                    class="alert alert-danger">
+
+                                     <div *ngIf="gender.errors.required">
+                                        Gender is required.
+                                        </div>
+
+                                        </div>
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group row">
-                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Age</label>
+                                    <label for="present_address" class="col-md-4 col-form-label text-md-right">Age*</label>
                                     <div class="col-md-6">
-                                        <input type="text" id="age" required [(ngModel)]="customer.age" name="age" required class="form-control">
-                                    </div>
+                                        <input type="age" id="age" required [(ngModel)]="customer.Age" name="age" required maxlength="2" required class="form-control" #age="ngModel">
+                                        <div *ngIf="warn">
+                                        <div *ngIf="age.invalid && (age.dirty || age.touched)"
+                                        class="alert alert-danger">
+
+                                         <div *ngIf="age.errors.required">
+                                            Age is required.
+                                            </div>
+                                            <div *ngIf="age.errors.maxlength">
+                                            Age cannot be more than 2 digits.
+                                            </div>
+                                            </div>
+                                            </div>
+                                      </div>
                                 </div>
 
 
 
 
                                     <div class="col-md-6 offset-md-4">
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit"   [disabled]="!customer.FullName || !customer.Age || !customer.Aadhar || !customer.Gender||!customer.dob" id="btnsubmit" class="btn btn-primary">
                                         Register
                                         </button>
-                                    </div>
 
+                                    </div>
+                                    <div *ngIf="alert" class="alert alert-success alert-dismissible fade show dist" role="alert">
+                                      <strong>Success!</strong> You have Registered successfully.
+                                      <button (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                      </button>
+                                    </div>
                             </form>
                         </div>
                     </div>
@@ -106,8 +211,10 @@
 
 </main>
 
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 </body>
 </html>

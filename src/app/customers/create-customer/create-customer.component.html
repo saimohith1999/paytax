@@ -34,7 +34,7 @@
             <a class="nav-link" href="http://localhost:4200/addsection80-d">SECTION 80D</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="http://localhost:4200/section-80ccd">SECTION 80CCD</a>
+            <a class="nav-link" href="http://localhost:4200/addsection80-ccd">SECTION 80CCD</a>
           </li>
         </ul>
         <span class="navbar-text">
@@ -52,86 +52,130 @@
                   <div class="card">
                       <div class="card-header">Section 80C</div>
                       <div class="card-body">
-                          <form name="myform" (ngSubmit)="onSubmit()"onsubmit="return validateForm()" method="post">
-                              <div class="form-group row">
-                                  <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name</label>
+                          <form name="myform" (ngSubmit)="onSubmit()" onsubmit="return validateForm()" method="post">
+
+                            <div class="form-group row">
+                                  <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name*</label>
                                   <div class="col-md-6">
-                                      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name" required>
-                                  </div>
+                                      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name"  required minlength="4" appForbiddenName="bob" #name="ngModel">
+                                      <div *ngIf="warn">
+                                        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                                          class="alert alert-danger">
+
+                                           <div *ngIf="name.errors.required">
+                                              Name is required.
+                                              </div>
+                                              <div *ngIf="name.errors.minlength">
+                                              Name must be at least 4 characters long.
+                                              </div>
+                                              <div *ngIf="name.errors.forbiddenName">
+                                              Name cannot be Bob.
+                                              </div>
+
+                                              </div>
+                                              </div>
+                                    </div>
                               </div>
 
                               <div class="form-group row">
-                                  <label for="name" class="col-md-4 col-form-label text-md-right">Age</label>
+                                  <label for="name" class="col-md-4 col-form-label text-md-right">Age*</label>
                                   <div class="col-md-6">
-                                      <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required>
+                                    <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required maxlength="2" required class="form-control" #age="ngModel">
+                                    <div *ngIf="warn">
+                                      <div *ngIf="age.invalid && (age.dirty || age.touched)"
+                                      class="alert alert-danger">
+
+                                       <div *ngIf="age.errors.required">
+                                          Age is required.
+                                          </div>
+                                          <div *ngIf="age.errors.maxlength">
+                                          Age cannot be more than 2 digits.
+                                          </div>
+                                          </div>
+                                          </div>
                                   </div>
                               </div>
+                              <div class="form-group row">
+                                <label for="user_name" class="col-md-4 col-form-label text-md-right">Assessment Year*</label>
+                                <div class="col-md-6">
+                                    <input type="date" id="dob" class="form-control" [(ngModel)]="customer.Assessmentyear" name="dob" required [(ngModel)]="customer.dob" name="dob" #dob="ngModel" required>
+                                    <div *ngIf="warn">
+                                      <div *ngIf="dob.invalid && (dob.dirty ||dob .touched)"
+                                      class="alert alert-danger">
 
+                                       <div *ngIf="dob.errors.required">
+                                          Date of Birth is required.
+                                          </div>
+
+                                          </div>
+                                          </div>
+                                  </div>
+                            </div>
                               <div class="form-group row">
                                   <label for="name" class="col-md-4 col-form-label text-md-right">Life Insurance Premium</label>
                                   <div class="col-md-6">
-                                      <input type="text" class="form-control" id="LIC" required [(ngModel)]="customer.LifeInsurancePremium" name="LIC" required>
+                                      <input type="number" class="form-control" id="LIC" required [(ngModel)]="customer.LifeInsurancePremium" name="LIC" required>
                                   </div>
                               </div>
                               <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right"> Public Provident Fund (PPF)
                                 </label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="providentfund" required [(ngModel)]="customer.PublicProvidentFund" name="providentfund" required>
+                                    <input type="number" class="form-control" id="providentfund" required [(ngModel)]="customer.PublicProvidentFund" name="providentfund" required>
                                 </div>
                             </div>
                             <div class="form-group row">
                               <label for="name" class="col-md-4 col-form-label text-md-right">Employees’ Provident Fund (EPF)</label>
                               <div class="col-md-6">
-                                  <input type="text" class="form-control" id="eprovident" required [(ngModel)]="customer.EmployeesProvidentFund" name="eprovident" required>
+                                  <input type="number" class="form-control" id="eprovident" required [(ngModel)]="customer.EmployeesProvidentFund" name="eprovident" required>
                               </div>
                           </div>
                           <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right"> Equity Linked Savings Scheme (ELSS)</label>
                             <div class="col-md-6">
-                                <input type="text" class="form-control" id="ELSS" required [(ngModel)]="customer.EquityLinkedSavingsScheme" name="ELSS" required>
+                                <input type="number" class="form-control" id="ELSS" required [(ngModel)]="customer.EquityLinkedSavingsScheme" name="ELSS" required>
                             </div>
                         </div>
                         <div class="form-group row">
                           <label for="name" class="col-md-4 col-form-label text-md-right"> Unit Linked Insurance Plan (ULIP)</label>
                           <div class="col-md-6">
-                              <input type="text" class="form-control" id="ULIP" required [(ngModel)]="customer.UnitLinkedInsurancePlan" name="ULIP" required>
+                              <input type="number" class="form-control" id="ULIP" required [(ngModel)]="customer.UnitLinkedInsurancePlan" name="ULIP" required>
                           </div>
                       </div>
                       <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">Tax Saver Fixed Deposits</label>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" id="taxsaver" required [(ngModel)]="customer.TaxSaverFixedDeposits" name="taxsaver" required>
+                            <input type="number" class="form-control" id="taxsaver" required [(ngModel)]="customer.TaxSaverFixedDeposits" name="taxsaver" required>
                         </div>
                     </div>
                     <div class="form-group row">
                       <label for="name" class="col-md-4 col-form-label text-md-right">National Pension Scheme (NPS)</label>
                       <div class="col-md-6">
-                          <input type="text" class="form-control" id="NPS" required [(ngModel)]="customer.NationalPensionScheme" name="NPS" required>
+                          <input type="number" class="form-control" id="NPS" required [(ngModel)]="customer.NationalPensionScheme" name="NPS" required>
                       </div>
                   </div>
                   <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Home Loan Principal Repayment</label>
                     <div class="col-md-6">
-                        <input type="text" class="form-control" id="hlpr" required [(ngModel)]="customer.HomeLoanPrincipalRepayment" name="hlpr" required>
+                        <input type="number" class="form-control" id="hlpr" required [(ngModel)]="customer.HomeLoanPrincipalRepayment" name="hlpr" required>
                     </div>
                 </div>
                 <div class="form-group row">
                   <label for="name" class="col-md-4 col-form-label text-md-right"> Sukanya Samriddhi Yojana</label>
                   <div class="col-md-6">
-                      <input type="text" class="form-control" id="ssy" required [(ngModel)]="customer.SukanyaSamriddhiYojana" name="ssy" required>
+                      <input type="number" class="form-control" id="ssy" required [(ngModel)]="customer.SukanyaSamriddhiYojana" name="ssy" required>
                   </div>
               </div>
               <div class="form-group row">
                 <label for="name" class="col-md-4 col-form-label text-md-right">Senior Citizens Savings Scheme</label>
                 <div class="col-md-6">
-                    <input type="text" class="form-control" id="scss" required [(ngModel)]="customer.SeniorCitizensSavingsScheme" name="scss" required>
+                    <input type="number" class="form-control" id="scss" required [(ngModel)]="customer.SeniorCitizensSavingsScheme" name="scss" required>
                 </div>
             </div>
             <div class="form-group row">
               <label for="name" class="col-md-4 col-form-label text-md-right">National Savings Certificate</label>
               <div class="col-md-6">
-                  <input type="text" class="form-control" id="ncd" required [(ngModel)]="customer.NationalSavingsCertificate" name="nsc" required>
+                  <input type="number" class="form-control" id="ncd" required [(ngModel)]="customer.NationalSavingsCertificate" name="nsc" required>
               </div>
           </div>
           <div class="form-group row">
@@ -144,9 +188,18 @@
         </div>
 
                                   <div class="col-md-6 offset-md-4">
-                                      <button type="submit" class="btn btn-primary">
+                                      <button type="submit" [disabled]="!customer.name || !customer.age ||!customer.Assessmentyear || !customer.LifeInsurancePremium || !customer.PublicProvidentFund || !customer.EmployeesProvidentFund || !customer.EquityLinkedSavingsScheme ||!customer.UnitLinkedInsurancePlan || !customer.TaxSaverFixedDeposits || !customer.NationalPensionScheme || !customer.HomeLoanPrincipalRepayment || !customer.SukanyaSamriddhiYojana ||!customer.SeniorCitizensSavingsScheme || !customer.NationalSavingsCertificate || !customer.Vendors"  class="btn btn-primary">
                                       Submit
                                       </button>
+                                      <!-- <div class="alert alert-danger" role="alert">
+                                        Note:Atleast one Scheme has to be selected!
+                                      </div> -->
+                                  </div>
+                                  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show dist" role="alert">
+                                    <strong>Success!</strong> Form has been submitted successfully.
+                                    <button (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
                                   </div>
 
                           </form>

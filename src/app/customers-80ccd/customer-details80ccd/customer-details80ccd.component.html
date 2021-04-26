@@ -1,0 +1,41 @@
+
+<div class="login435" *ngIf="customer">
+  <div class="form-group row">
+    <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name </label>
+    <div class="col-md-6">
+     {{customer.name}}
+  </div>
+</div>
+
+<div class="form-group row">
+    <label for="name" class="col-md-4 col-form-label text-md-right">Age</label>
+    <div class="col-md-6">
+      {{customer.age}}
+  </div>
+</div>
+<div class="form-group row">
+  <label for="name" class="col-md-4 col-form-label text-md-right"> Assessment Year</label>
+  <div class="col-md-6">
+    {{customer.Assessmentyear}}
+</div>
+</div>
+<div class="form-group row">
+    <label for="name" class="col-md-4 col-form-label text-md-right">For Employees – 10% of his salary in the previous year</label>
+    <div class="col-md-6">
+      {{customer.ForEmployees10perofhissalaryinthepreviousyear}}
+  </div>
+</div>
+<div class="form-group row">
+  <label for="name" class="col-md-4 col-form-label text-md-right"> Self Employed Person – 20% of his gross total income in the previous year</label>
+  <div class="col-md-6">
+    {{customer.SelfEmployedPerson20perofhisgrosstotalincomeinthepreviousyear}}
+</div>
+</div>
+
+
+
+
+
+<span class="button is-small btn-danger" (click)='deleteCustomer()'>Delete</span>
+
+</div>
