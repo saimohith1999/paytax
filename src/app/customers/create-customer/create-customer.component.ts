@@ -18,6 +18,9 @@ export class CreateCustomerComponent implements OnInit {
   default: string = '';
   alert : boolean = false
   warn: boolean=true
+  res:number;
+
+
   constructor(private customerService: CustomerService)
   {}
 
@@ -46,7 +49,15 @@ export class CreateCustomerComponent implements OnInit {
     this.alert=true;
   }
 
-
+  verify(){
+    this.res= this.customer.LifeInsurancePremium + this.customer.PublicProvidentFund  + this.customer.EmployeesProvidentFund + this.customer.EquityLinkedSavingsScheme + this.customer.UnitLinkedInsurancePlan + this.customer.TaxSaverFixedDeposits + this.customer.NationalPensionScheme + this.customer.HomeLoanPrincipalRepayment  + this.customer.SukanyaSamriddhiYojana  + this.customer.SeniorCitizensSavingsScheme + this.customer.NationalSavingsCertificate ;
+    if(this.res <= 150000){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
 
 
 }

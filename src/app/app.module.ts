@@ -55,7 +55,8 @@ import {CreateCustomer80CCDComponent} from './customers-80ccd/create-customer80c
 import {CustomerDetails80CCDComponent} from './customers-80ccd/customer-details80ccd/customer-details80ccd.component';
 import {CustomersList80CCDComponent} from './customers-80ccd/customers-list80ccd/customers-list80ccd.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
-
+import {HelpComponent} from './components/Help/Help/help.component';
+import { ServicesPageComponent } from './components/services-page/services-page.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,7 +85,9 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
     CreateCustomer80CCDComponent,
     CustomerDetails80CCDComponent,
     CustomersList80CCDComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    HelpComponent,
+    ServicesPageComponent
 
   ],
   imports: [

@@ -1,3 +1,4 @@
+import { ServicesPageComponent } from './../../components/services-page/services-page.component';
 import { AboutUsComponent } from './../../components/about-us/about-us.component';
 
 import { DropdownComponent } from './../../components/dropdown/dropdown.component';
@@ -25,6 +26,7 @@ import{CompanyPageComponent} from 'src/app/components/company-page/company-page.
 import {CreateCustomer80DComponent} from '../../customers-80d/create-customer80d/create-customer80d.component';
 import { CreateCustomer80CCDComponent } from '../../customers-80ccd/create-customer80ccd/create-customer80ccd.component';
 import {CustomersList80CCDComponent} from './../../customers-80ccd/customers-list80ccd/customers-list80ccd.component';
+import {HelpComponent} from './../../components/Help/Help/help.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/company-page', pathMatch: 'full'},
@@ -47,7 +49,9 @@ const routes: Routes = [
 {path:'dropdown',component:DropdownComponent},
 {path:'addsection80-d',component:CreateCustomer80DComponent},
 {path:'addsection80-ccd',component:CreateCustomer80CCDComponent},
-{path:'about-us',component:AboutUsComponent}
+{path:'about-us',component:AboutUsComponent},
+{path:'help',component:HelpComponent},
+{path:'services',component:ServicesPageComponent}
 ];
 
 @NgModule({

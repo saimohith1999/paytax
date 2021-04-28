@@ -19,6 +19,9 @@ PayableTax:number;
   }
 
 calculate(){
+
+  if(this.income >= 250000){
+
   this.TotaltaxableIncome=(this.income)-(this.deduction);
   this.Basicexemption=250000;
   this.TaxableAmount=this.TotaltaxableIncome-this.Basicexemption;
@@ -44,6 +47,13 @@ calculate(){
   else if(this.TotaltaxableIncome>=1500000){
     this.PayableTax=this.TaxableAmount*(0.3);
   }
+}
+else if(this.income < 250000){
+  this.TotaltaxableIncome=0;
+  this.Basicexemption=0;
+  this.TaxableAmount=0;
+  this.PayableTax=0;
+}
 
 
 }

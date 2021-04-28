@@ -73,29 +73,8 @@
             </nav>
         </div>
     </header>
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <!-- Tabs Titles -->
 
-    <!-- Icon -->
-    <div class="fadeIn first signup">
-         Sign Up
-    </div>
 
-    <!-- Login Form -->
-    <form>
-      <input type="email" id="login" class="fadeIn second" name="login" placeholder="Email Address" #userEmail required>
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" #userPwd required>
-      <input type="submit" class="fadeIn fourth" value="Sign-up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
-    </form>
 
-    <!-- Remind Passowrd -->
-    <div id="formFooter">
-      <span class="rty">Already a member? <a class="underlineHover qwe" href="http://localhost:4200/sign-in"> Login</a> </span><br>
-
-    </div>
-
-  </div>
-</div>
 </body>
 </html>

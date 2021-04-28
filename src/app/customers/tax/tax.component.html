@@ -2,42 +2,115 @@
 <head>
     <meta charset="utf-8">
     <title>Income Tax Calculator</title>
-    <style>
-    article, aside, figure, footer, header, nav, section {
-    display: block;
-    }
-    body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: white;
-    margin: 0 auto;
-    width: 500px;
-    border: 3px solid blue;
-    }
-    h1 {
-    color: blue;
-    margin-top: 0;
-    }
-    section {
-    padding: 1em 2em;
-    }
-    label {
-    float: left;
-    width: 10em;
-    text-align: right;
-    }
-    input {
-    margin-left: 1em;
-    margin-bottom: .5em;
-    }
-
-    </style>
-
 
 </head>
 
 <body>
+  <section>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Paytax</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
 
-    <h1>Income Tax Calculator</h1>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/dashboard">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/profile">User Profile <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item article active">
+          <a class="nav-link" href="http://localhost:4200/dropdown">Tax Reports</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/recom-form">Create form</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/home-page">Logout</a>
+        </li>
+
+      </ul>
+      <span class="navbar-text">
+
+      </span>
+    </div>
+  </nav>
+
+    </section>
+    <main class="my-form">
+      <div class="cotainer">
+          <div class="row justify-content-center">
+              <div class="col-md-8">
+                      <div class="card">
+                          <div class="card-header crd">Tax Calculator</div>
+                          <div class="card-body">
+                              <form name="my-form">
+
+                                  <div class="form-group row">
+
+                                      <label for="full_name"  class="col-md-4 col-form-label text-md-right">Total Income</label>
+                                      <div class="col-md-6">
+                                          <input type="number" id="name"  class="form-control" [(ngModel)]="income" name="name" #name="ngModel" required>
+                                       <!-- <div *ngIf="warn">
+                                        <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                                          class="alert alert-danger">
+
+                                           <div *ngIf="name.errors.required">
+                                              Name is required.
+                                              </div>
+                                              <div *ngIf="name.errors.minlength">
+                                              Name must be at least 4 characters long.
+                                              </div>
+                                              <div *ngIf="name.errors.forbiddenName">
+                                              Name cannot be Bob.
+                                              </div>
+
+                                              </div>
+                                              </div> -->
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label for="Aadhar" class="col-md-4 col-form-label text-md-right">Deductions</label>
+                                      <div class="col-md-6">
+                                          <input type="number" id="aadhar" class="form-control" required [(ngModel)]="deduction" name="aadhar" #aadhar="ngModel" >
+                                          <!-- <div *ngIf="warn">
+                                          <div *ngIf="aadhar.invalid && (aadhar.dirty || aadhar.touched)"
+                                          class="alert alert-danger">
+
+                                           <div *ngIf="aadhar.errors.required">
+                                              Aadhar ID is required.
+                                              </div>
+                                              <div *ngIf="aadhar.errors.minlength">
+                                              Aadhar ID must be at least 12 digits long.
+                                              </div>
+
+                                              <div *ngIf="aadhar.errors.type">
+                                                Adhaar ID cannot be text.
+                                                </div>
+                                            </div>
+                                              </div> -->
+                                        </div>
+                                  </div>
+                                  <button class="btn btn-primary center" [disabled]="!income||!deduction" (click)="calculate()">Calculate</button><br><br>
+
+                                  <label>Total taxable Income:</label> {{TotaltaxableIncome}}<br><br>
+                                  <label>Basic Exemption:</label>{{Basicexemption}}<br><br>
+                                  <label>Taxable Amount:</label>{{TaxableAmount}}<br><br>
+                                  <label class="btn-success">Payable tax:</label>{{PayableTax}}<br><br>
+
+                              </form>
+                          </div>
+                      </div>
+              </div>
+          </div>
+      </div>
+
+  </main>
+    <!-- <h1>Income Tax Calculator</h1>
 
     <label>Enter Income:</label>
     <input type="text" [(ngModel)]="income" />
@@ -47,6 +120,6 @@
     <label>Total taxable Income:</label> {{TotaltaxableIncome}}<br><br>
     <label>Basic Exemption:</label>{{Basicexemption}}<br><br>
     <label>Taxable Amount:</label>{{TaxableAmount}}<br><br>
-    <label>Payable tax:</label>{{PayableTax}}<br><br>
+    <label>Payable tax:</label>{{PayableTax}}<br><br> -->
 </body>
 </html>

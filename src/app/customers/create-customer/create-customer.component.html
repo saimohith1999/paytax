@@ -53,7 +53,7 @@
                       <div class="card-header">Section 80C</div>
                       <div class="card-body">
                           <form name="myform" (ngSubmit)="onSubmit()" onsubmit="return validateForm()" method="post">
-
+                              <p style="color: red;">Note:- Section 80C allows for a maximum deduction of up to Rs.1.5 lakh every year</p>
                             <div class="form-group row">
                                   <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name*</label>
                                   <div class="col-md-6">
@@ -114,81 +114,223 @@
                               <div class="form-group row">
                                   <label for="name" class="col-md-4 col-form-label text-md-right">Life Insurance Premium</label>
                                   <div class="col-md-6">
-                                      <input type="number" class="form-control" id="LIC" required [(ngModel)]="customer.LifeInsurancePremium" name="LIC" required>
+                                    <input type="number" class="form-control" id="LIC" required [(ngModel)]="customer.LifeInsurancePremium" name="LIC" #LifeInsurancePremium="ngModel" required>
+                                    <div *ngIf="warn">
+                                      <div *ngIf="LifeInsurancePremium.invalid && (LifeInsurancePremium.dirty ||LifeInsurancePremium .touched)"
+                                      class="alert alert-danger">
+
+                                       <div *ngIf="LifeInsurancePremium.errors.required">
+                                          This is required.
+                                          </div>
+
+                                          </div>
+                                          </div>
                                   </div>
                               </div>
+                              <div class="form-group row">
+                                <label for="name" class="col-md-4 col-form-label text-md-right">Tution Fee for Children</label>
+                                <div class="col-md-6">
+                                    <input type="number" class="form-control" id="ncd" required [(ngModel)]="customer.TutionFeeforChildren" name="nsc" #TutionFeeforChildren="ngModel" required>
+                                    <div *ngIf="warn">
+                                      <div *ngIf="TutionFeeforChildren.invalid && (TutionFeeforChildren.dirty ||TutionFeeforChildren.touched)"
+                                      class="alert alert-danger">
+
+                                       <div *ngIf="TutionFeeforChildren.errors.required">
+                                          This is required.
+                                          </div>
+
+                                          </div>
+                                          </div>
+                                  </div>
+                            </div>
                               <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right"> Public Provident Fund (PPF)
                                 </label>
                                 <div class="col-md-6">
-                                    <input type="number" class="form-control" id="providentfund" required [(ngModel)]="customer.PublicProvidentFund" name="providentfund" required>
-                                </div>
+                                    <input type="number" class="form-control" id="providentfund" required [(ngModel)]="customer.PublicProvidentFund" name="providentfund" #PublicProvidentFund="ngModel" required>
+                                    <div *ngIf="warn">
+                                      <div *ngIf="PublicProvidentFund.invalid && (PublicProvidentFund.dirty ||PublicProvidentFund .touched)"
+                                      class="alert alert-danger">
+
+                                       <div *ngIf="PublicProvidentFund.errors.required">
+                                          This is required.
+                                          </div>
+
+                                          </div>
+                                          </div>
+                                  </div>
                             </div>
                             <div class="form-group row">
                               <label for="name" class="col-md-4 col-form-label text-md-right">Employees’ Provident Fund (EPF)</label>
                               <div class="col-md-6">
-                                  <input type="number" class="form-control" id="eprovident" required [(ngModel)]="customer.EmployeesProvidentFund" name="eprovident" required>
-                              </div>
+                                  <input type="number" class="form-control" id="eprovident" required [(ngModel)]="customer.EmployeesProvidentFund" name="eprovident" #EmployeesProvidentFund="ngModel" required>
+                                  <div *ngIf="warn">
+                                    <div *ngIf="EmployeesProvidentFund.invalid && (EmployeesProvidentFund.dirty ||EmployeesProvidentFund .touched)"
+                                    class="alert alert-danger">
+
+                                     <div *ngIf="EmployeesProvidentFund.errors.required">
+                                        This is required.
+                                        </div>
+
+                                        </div>
+                                        </div>
+                                </div>
                           </div>
                           <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right"> Equity Linked Savings Scheme (ELSS)</label>
                             <div class="col-md-6">
-                                <input type="number" class="form-control" id="ELSS" required [(ngModel)]="customer.EquityLinkedSavingsScheme" name="ELSS" required>
-                            </div>
+                                <input type="number" class="form-control" id="ELSS" required [(ngModel)]="customer.EquityLinkedSavingsScheme" name="ELSS" #EquityLinkedSavingsScheme="ngModel" required>
+                                <div *ngIf="warn">
+                                  <div *ngIf="EquityLinkedSavingsScheme.invalid && (EquityLinkedSavingsScheme.dirty ||EquityLinkedSavingsScheme .touched)"
+                                  class="alert alert-danger">
+
+                                   <div *ngIf="EquityLinkedSavingsScheme.errors.required">
+                                      This is required.
+                                      </div>
+
+                                      </div>
+                                      </div>
+                              </div>
                         </div>
                         <div class="form-group row">
                           <label for="name" class="col-md-4 col-form-label text-md-right"> Unit Linked Insurance Plan (ULIP)</label>
                           <div class="col-md-6">
-                              <input type="number" class="form-control" id="ULIP" required [(ngModel)]="customer.UnitLinkedInsurancePlan" name="ULIP" required>
-                          </div>
+                              <input type="number" class="form-control" id="ULIP" required [(ngModel)]="customer.UnitLinkedInsurancePlan" name="ULIP" #UnitLinkedInsurancePlan="ngModel" required>
+                              <div *ngIf="warn">
+                                <div *ngIf="UnitLinkedInsurancePlan.invalid && (UnitLinkedInsurancePlan.dirty ||UnitLinkedInsurancePlan .touched)"
+                                class="alert alert-danger">
+
+                                 <div *ngIf="UnitLinkedInsurancePlan.errors.required">
+                                    This is required.
+                                    </div>
+
+                                    </div>
+                                    </div>
+                            </div>
                       </div>
                       <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">Tax Saver Fixed Deposits</label>
                         <div class="col-md-6">
-                            <input type="number" class="form-control" id="taxsaver" required [(ngModel)]="customer.TaxSaverFixedDeposits" name="taxsaver" required>
-                        </div>
+                            <input type="number" class="form-control" id="taxsaver" required [(ngModel)]="customer.TaxSaverFixedDeposits" name="taxsaver" #TaxSaverFixedDeposits="ngModel" required>
+                            <div *ngIf="warn">
+                              <div *ngIf="TaxSaverFixedDeposits.invalid && (TaxSaverFixedDeposits.dirty ||TaxSaverFixedDeposits .touched)"
+                              class="alert alert-danger">
+
+                               <div *ngIf="TaxSaverFixedDeposits.errors.required">
+                                  This is required.
+                                  </div>
+
+                                  </div>
+                                  </div>
+                          </div>
                     </div>
                     <div class="form-group row">
                       <label for="name" class="col-md-4 col-form-label text-md-right">National Pension Scheme (NPS)</label>
                       <div class="col-md-6">
-                          <input type="number" class="form-control" id="NPS" required [(ngModel)]="customer.NationalPensionScheme" name="NPS" required>
-                      </div>
+                          <input type="number" class="form-control" id="NPS" required [(ngModel)]="customer.NationalPensionScheme" name="NPS" #NationalPensionScheme="ngModel" required>
+                          <div *ngIf="warn">
+                            <div *ngIf="NationalPensionScheme.invalid && (NationalPensionScheme.dirty ||NationalPensionScheme .touched)"
+                            class="alert alert-danger">
+
+                             <div *ngIf="NationalPensionScheme.errors.required">
+                                This is required.
+                                </div>
+
+                                </div>
+                                </div>
+                        </div>
                   </div>
                   <div class="form-group row">
                     <label for="name" class="col-md-4 col-form-label text-md-right">Home Loan Principal Repayment</label>
                     <div class="col-md-6">
-                        <input type="number" class="form-control" id="hlpr" required [(ngModel)]="customer.HomeLoanPrincipalRepayment" name="hlpr" required>
-                    </div>
+                        <input type="number" class="form-control" id="hlpr" required [(ngModel)]="customer.HomeLoanPrincipalRepayment" name="hlpr" #HomeLoanPrincipalRepayment="ngModel" required>
+                        <div *ngIf="warn">
+                          <div *ngIf="HomeLoanPrincipalRepayment.invalid && (HomeLoanPrincipalRepayment.dirty ||HomeLoanPrincipalRepayment .touched)"
+                          class="alert alert-danger">
+
+                           <div *ngIf="HomeLoanPrincipalRepayment.errors.required">
+                              This is required.
+                              </div>
+
+                              </div>
+                              </div>
+                      </div>
                 </div>
                 <div class="form-group row">
                   <label for="name" class="col-md-4 col-form-label text-md-right"> Sukanya Samriddhi Yojana</label>
                   <div class="col-md-6">
-                      <input type="number" class="form-control" id="ssy" required [(ngModel)]="customer.SukanyaSamriddhiYojana" name="ssy" required>
-                  </div>
+                      <input type="number" class="form-control" id="ssy" required [(ngModel)]="customer.SukanyaSamriddhiYojana" name="ssy" #SukanyaSamriddhiYojana="ngModel" required>
+                      <div *ngIf="warn">
+                        <div *ngIf="SukanyaSamriddhiYojana.invalid && (SukanyaSamriddhiYojana.dirty ||SukanyaSamriddhiYojana .touched)"
+                        class="alert alert-danger">
+
+                         <div *ngIf="SukanyaSamriddhiYojana.errors.required">
+                            This is required.
+                            </div>
+
+                            </div>
+                            </div>
+                    </div>
               </div>
               <div class="form-group row">
                 <label for="name" class="col-md-4 col-form-label text-md-right">Senior Citizens Savings Scheme</label>
                 <div class="col-md-6">
-                    <input type="number" class="form-control" id="scss" required [(ngModel)]="customer.SeniorCitizensSavingsScheme" name="scss" required>
-                </div>
+                    <input type="number" class="form-control" id="scss" required [(ngModel)]="customer.SeniorCitizensSavingsScheme" name="scss" #SeniorCitizensSavingsScheme="ngModel" required>
+                    <div *ngIf="warn">
+                      <div *ngIf="SeniorCitizensSavingsScheme.invalid && (SeniorCitizensSavingsScheme.dirty ||SeniorCitizensSavingsScheme .touched)"
+                      class="alert alert-danger">
+
+                       <div *ngIf="SeniorCitizensSavingsScheme.errors.required">
+                          This is required.
+                          </div>
+
+                          </div>
+                          </div>
+                  </div>
             </div>
             <div class="form-group row">
               <label for="name" class="col-md-4 col-form-label text-md-right">National Savings Certificate</label>
               <div class="col-md-6">
-                  <input type="number" class="form-control" id="ncd" required [(ngModel)]="customer.NationalSavingsCertificate" name="nsc" required>
-              </div>
+                  <input type="number" class="form-control" id="ncd" required [(ngModel)]="customer.NationalSavingsCertificate" name="nsc" #NationalSavingsCertificate="ngModel" required>
+                  <div *ngIf="warn">
+                    <div *ngIf="NationalSavingsCertificate.invalid && (NationalSavingsCertificate.dirty ||NationalSavingsCertificate.touched)"
+                    class="alert alert-danger">
+
+                     <div *ngIf="NationalSavingsCertificate.errors.required">
+                        This is required.
+                        </div>
+
+                        </div>
+                        </div>
+                </div>
           </div>
           <div class="form-group row">
             <label for="name" class="col-md-4 col-form-label text-md-right">Select Vendors</label>
             <div class="col-md-6">
-              <select id="Vendors" class="form-control"  required [(ngModel)]="customer.Vendors" name="Vendors" required>
+              <select id="Vendors" class="form-control"  required [(ngModel)]="customer.Vendors" name="Vendors" #vendors="ngModel" required>
                 <option *ngFor="let c of countries" [ngValue]="c">{{ c }}</option>
             </select>
+            <div *ngIf="warn">
+              <div *ngIf="vendors.invalid && (vendors.dirty ||vendors .touched)"
+              class="alert alert-danger">
+
+               <div *ngIf="vendors.errors.required">
+                  This is required.
+                  </div>
+
+                  </div>
+                  </div>
             </div>
         </div>
+        <div class="form-group row">
+          <label for="name" class="col-md-4 col-form-label text-md-right">Total:-</label>{{res}}
+
+      </div>
+
+
 
                                   <div class="col-md-6 offset-md-4">
-                                      <button type="submit" [disabled]="!customer.name || !customer.age ||!customer.Assessmentyear || !customer.LifeInsurancePremium || !customer.PublicProvidentFund || !customer.EmployeesProvidentFund || !customer.EquityLinkedSavingsScheme ||!customer.UnitLinkedInsurancePlan || !customer.TaxSaverFixedDeposits || !customer.NationalPensionScheme || !customer.HomeLoanPrincipalRepayment || !customer.SukanyaSamriddhiYojana ||!customer.SeniorCitizensSavingsScheme || !customer.NationalSavingsCertificate || !customer.Vendors"  class="btn btn-primary">
+                                      <button type="submit" [disabled]="!customer.name || !customer.age ||!customer.Assessmentyear || !customer.LifeInsurancePremium  || !customer.PublicProvidentFund || !customer.EmployeesProvidentFund || !customer.EquityLinkedSavingsScheme ||!customer.UnitLinkedInsurancePlan || !customer.TaxSaverFixedDeposits || !customer.NationalPensionScheme || !customer.HomeLoanPrincipalRepayment || !customer.SukanyaSamriddhiYojana ||!customer.SeniorCitizensSavingsScheme || !customer.NationalSavingsCertificate || !customer.Vendors || verify()"  class="btn btn-primary">
                                       Submit
                                       </button>
                                       <!-- <div class="alert alert-danger" role="alert">

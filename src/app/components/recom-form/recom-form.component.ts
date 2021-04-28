@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-recom-form',
@@ -8,16 +7,126 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
   styleUrls: ['./recom-form.component.css']
 })
 export class recomComponent {
-  currentVal=0;
-  deduction=50000;
-  deduction1=20000;
+  currentVal:number;
+  income:number;
+  TotaltaxableIncome:number;
+  deduction:number;
+  // deduction1=20000;
+  // deduction2=0;
   basicexemption=250000;
-  taxableAmount=0;
+  TaxableAmount:number;
+  PayableTax:number;
+//  getVal(val){
 
-
- getVal(val){
-    console.warn(val);
-    this.currentVal=val;
+//     this.currentVal=val;
+//   }
+calculate(){
+  if(this.currentVal >= 250000 && this.currentVal < 500000){
+    this.deduction=20000;
+    this.TotaltaxableIncome=(this.currentVal)-(this.deduction);
+    this.TaxableAmount=this.TotaltaxableIncome-this.basicexemption;
+    if(this.TotaltaxableIncome>=0 && this.TotaltaxableIncome < 250000){
+      this.PayableTax=this.TaxableAmount;
+   }
+   else if(this.TotaltaxableIncome>=250000 && this.TotaltaxableIncome < 500000){
+      this.PayableTax=this.TaxableAmount*(0.05);
+   }
+   else if(this.TotaltaxableIncome>=500000 && this.TotaltaxableIncome < 750000){
+     this.PayableTax=this.TaxableAmount*(0.2);
+   }
+   else if(this.TotaltaxableIncome>=750000 && this.TotaltaxableIncome < 1000000){
+     this.PayableTax=this.TaxableAmount*(0.2);
+   }
+   else if(this.TotaltaxableIncome>=1000000 && this.TotaltaxableIncome < 1250000){
+     this.PayableTax=this.TaxableAmount*(0.3);
+   }
+   else if(this.TotaltaxableIncome>=1250000 && this.TotaltaxableIncome < 1500000){
+     this.PayableTax=this.TaxableAmount*(0.3);
+   }
+   else if(this.TotaltaxableIncome>=1500000){
+     this.PayableTax=this.TaxableAmount*(0.3);
+   }
+   else if(this.income < 250000){
+    this.TotaltaxableIncome=0;
+    this.basicexemption=0;
+    this.TaxableAmount=0;
+    this.PayableTax=0;
+   }
   }
 
+  else if(this.currentVal >=500000 && this.currentVal < 750000){
+   this.deduction=50000;
+   this.TotaltaxableIncome=(this.currentVal)-(this.deduction);
+   this.TaxableAmount=this.TotaltaxableIncome-this.basicexemption;
+   if(this.TotaltaxableIncome>=0 && this.TotaltaxableIncome < 250000){
+     this.PayableTax=this.TaxableAmount;
+  }
+  else if(this.TotaltaxableIncome>=250000 && this.TotaltaxableIncome < 500000){
+     this.PayableTax=this.TaxableAmount*(0.05);
+  }
+  else if(this.TotaltaxableIncome>=500000 && this.TotaltaxableIncome < 750000){
+    this.PayableTax=this.TaxableAmount*(0.2);
+  }
+  else if(this.TotaltaxableIncome>=750000 && this.TotaltaxableIncome < 1000000){
+    this.PayableTax=this.TaxableAmount*(0.2);
+  }
+  else if(this.TotaltaxableIncome>=1000000 && this.TotaltaxableIncome < 1250000){
+    this.PayableTax=this.TaxableAmount*(0.3);
+  }
+  else if(this.TotaltaxableIncome>=1250000 && this.TotaltaxableIncome < 1500000){
+    this.PayableTax=this.TaxableAmount*(0.3);
+  }
+  else if(this.TotaltaxableIncome>=1500000){
+    this.PayableTax=this.TaxableAmount*(0.3);
+  }
+  else if(this.income < 250000){
+    this.TotaltaxableIncome=0;
+    this.basicexemption=0;
+    this.TaxableAmount=0;
+    this.PayableTax=0;
+  }
+
+  }
+  else if(this.currentVal >=750000 && this.currentVal < 1000000){
+    this.deduction=70000;
+    this.TotaltaxableIncome=(this.currentVal)-(this.deduction);
+    this.TaxableAmount=this.TotaltaxableIncome-this.basicexemption;
+    if(this.TotaltaxableIncome>=0 && this.TotaltaxableIncome < 250000){
+      this.PayableTax=this.TaxableAmount;
+   }
+   else if(this.TotaltaxableIncome>=250000 && this.TotaltaxableIncome < 500000){
+      this.PayableTax=this.TaxableAmount*(0.05);
+   }
+   else if(this.TotaltaxableIncome>=500000 && this.TotaltaxableIncome < 750000){
+     this.PayableTax=this.TaxableAmount*(0.2);
+   }
+   else if(this.TotaltaxableIncome>=750000 && this.TotaltaxableIncome < 1000000){
+     this.PayableTax=this.TaxableAmount*(0.2);
+   }
+   else if(this.TotaltaxableIncome>=1000000 && this.TotaltaxableIncome < 1250000){
+     this.PayableTax=this.TaxableAmount*(0.3);
+   }
+   else if(this.TotaltaxableIncome>=1250000 && this.TotaltaxableIncome < 1500000){
+     this.PayableTax=this.TaxableAmount*(0.3);
+   }
+   else if(this.TotaltaxableIncome>=1500000){
+     this.PayableTax=this.TaxableAmount*(0.3);
+   }
+   else if(this.income < 250000){
+     this.TotaltaxableIncome=0;
+     this.basicexemption=0;
+     this.TaxableAmount=0;
+     this.PayableTax=0;
+   }
+  else if(this.income < 250000){
+  this.TotaltaxableIncome=0;
+  this.basicexemption=0;
+  this.TaxableAmount=0;
+  this.PayableTax=0;
 }
+
+
+}
+}
+}
+
