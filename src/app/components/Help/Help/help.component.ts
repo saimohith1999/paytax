@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
-
-
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
@@ -17,13 +14,10 @@ export class HelpComponent implements OnInit {
   warn:boolean=true;
   alert:boolean=false;
 
-
   constructor(private customerService: CustomerService)
   {}
 
-  ngOnInit() {
-
-  }
+  ngOnInit(){}
 
   newCustomer(): void {
     this.submitted = false;

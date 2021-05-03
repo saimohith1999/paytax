@@ -19,7 +19,7 @@ export class CreateCustomer80CCDComponent implements OnInit {
   warn:boolean=true;
   alert:boolean=false;
   constructor(private customerService: CustomerService) { }
-
+res:number;
   ngOnInit() {
   }
 
@@ -40,7 +40,17 @@ export class CreateCustomer80CCDComponent implements OnInit {
     this.warn=false;
   }
   closeAlert(){
-    this.alert=false
+    this.alert=false;
+  }
+  verify(){
+    this.res=parseFloat(this.customer.ForEmployees10perofhissalaryinthepreviousyear) + parseFloat(this.customer.SelfEmployedPerson20perofhisgrosstotalincomeinthepreviousyear) ;
+    if(this.res <= 200000){
+    return false;
+    }
+    else
+    {
+      return true;
+    }
   }
  // let pdfName = 'tax_report';
   //var doc = new jsPDF();

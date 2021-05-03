@@ -53,11 +53,12 @@
                       <div class="card-header">Section 80CCD</div>
                       <div class="card-body">
                           <form name="myform" (ngSubmit)="onSubmit()"onsubmit="return validateForm()" method="post">
+                            <p style="color: red;">Note:- Section 80CCD allows for a maximum deduction of up to Rs.2 lakh every year</p>
 
                             <div class="form-group row">
                                   <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name*</label>
                                   <div class="col-md-6">
-                                      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name"  required minlength="4" appForbiddenName="bob" #name="ngModel" required>
+                                      <input type="text" autocomplete="off" class="form-control" id="name" required [(ngModel)]="customer.name" name="name"  required minlength="4" appForbiddenName="bob" #name="ngModel" required>
                                       <div *ngIf="warn">
                                         <div *ngIf="name.invalid && (name.dirty || name.touched)"
                                           class="alert alert-danger">
@@ -80,7 +81,7 @@
                               <div class="form-group row">
                                   <label for="name" class="col-md-4 col-form-label text-md-right">Age*</label>
                                   <div class="col-md-6">
-                                    <input type="text" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required maxlength="2" required class="form-control" #age="ngModel">
+                                    <input type="text" autocomplete="off" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required maxlength="2" required class="form-control" #age="ngModel">
                                     <div *ngIf="warn">
                                       <div *ngIf="age.invalid && (age.dirty || age.touched)"
                                       class="alert alert-danger">
@@ -98,7 +99,7 @@
                               <div class="form-group row">
                                 <label for="user_name" class="col-md-4 col-form-label text-md-right">Assessment Year*</label>
                                 <div class="col-md-6">
-                                    <input type="date" id="dob" class="form-control" [(ngModel)]="customer.Assessmentyear" name="dob" required [(ngModel)]="customer.dob" name="dob" #dob="ngModel" required>
+                                    <input type="date" id="dob" autocomplete="off" class="form-control" [(ngModel)]="customer.Assessmentyear" name="dob" required [(ngModel)]="customer.dob" name="dob" #dob="ngModel" required>
                                     <div *ngIf="warn">
                                       <div *ngIf="dob.invalid && (dob.dirty ||dob .touched)"
                                       class="alert alert-danger">
@@ -114,26 +115,51 @@
                               <div class="form-group row">
                                   <label for="name" class="col-md-4 col-form-label text-md-right">For Employees – 10% of his salary in the previous year</label>
                                   <div class="col-md-6">
-                                      <input type="text" class="form-control" id="cghs" required [(ngModel)]="customer.ForEmployees10perofhissalaryinthepreviousyear" name="cghs" required>
-                                  </div>
+                                      <input type="text" class="form-control" autocomplete="off" id="cghs" required [(ngModel)]="customer.ForEmployees10perofhissalaryinthepreviousyear" name="cghs" #epe="ngModel" required>
+                                      <div *ngIf="warn">
+                                        <div *ngIf="epe.invalid && (epe.dirty ||epe.touched)"
+                                        class="alert alert-danger">
+
+                                         <div *ngIf="epe.errors.required">
+                                            This is required.
+                                            </div>
+
+                                            </div>
+                                            </div>
+                                    </div>
                               </div>
                               <div class="form-group row">
                                 <label for="name" class="col-md-4 col-form-label text-md-right">Self Employed Person – 20% of his gross total income in the previous year
                                 </label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" id="providentfund" required [(ngModel)]="customer.SelfEmployedPerson20perofhisgrosstotalincomeinthepreviousyear" name="providentfund" required>
-                                </div>
+                                    <input type="text" class="form-control" autocomplete="off" id="providentfund" required [(ngModel)]="customer.SelfEmployedPerson20perofhisgrosstotalincomeinthepreviousyear" name="providentfund" #epe1="ngModel" required>
+                                    <div *ngIf="warn">
+                                      <div *ngIf="epe1.invalid && (epe1.dirty ||epe1 .touched)"
+                                      class="alert alert-danger">
+
+                                       <div *ngIf="epe1.errors.required">
+                                          This is required.
+                                          </div>
+
+                                          </div>
+                                          </div>
+                                  </div>
                             </div>
 
+                            <div class="form-group row">
+                              <label for="name" class="col-md-4 col-form-label text-md-right">Total:-</label>{{res}}
 
-
+                          </div>
+                          <ng-template [ngIf]="res > 200000">
+                            <p class="btn-warning" style="text-align:center">Amount cannont be exceeded 2 lakh</p>
+                          </ng-template>
                                   <div class="col-md-6 offset-md-4">
-                                      <button type="submit" [disabled]="!customer.name || !customer.age ||!customer.Assessmentyear||!customer.ForEmployees10perofhissalaryinthepreviousyear && !customer.SelfEmployedPerson20perofhisgrosstotalincomeinthepreviousyear" class="btn btn-primary">
+                                      <button type="submit" [disabled]="!customer.name || !customer.age ||!customer.Assessmentyear||!customer.ForEmployees10perofhissalaryinthepreviousyear || !customer.SelfEmployedPerson20perofhisgrosstotalincomeinthepreviousyear||verify()" class="btn btn-primary">
                                       Submit
                                       </button>
                                   </div>
-                                  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show dist" role="alert">
-                                    <strong>Success!</strong> Form has been submitted successfully.
+                                  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show dist" style="text-align: center;" role="alert">
+                                    <strong>Success!</strong> Form submitted successfully.
                                     <button (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 
 
 import { Customer } from '../customer';
@@ -14,19 +13,22 @@ export class CreateCustomerComponent implements OnInit {
 
   customer: Customer = new Customer();
   submitted = false;
-  countries: string[] = ['UPSTOCKS', 'MORE-INVEST', 'MONEY-WAY'];
+  // countries: string[] = ['UPSTOCKS', 'MORE-INVEST', 'MONEY-WAY'];
   default: string = '';
   alert : boolean = false
   warn: boolean=true
   res:number;
 
 
+
   constructor(private customerService: CustomerService)
   {}
 
-  ngOnInit() {
+  ngOnInit():void{
+
 
   }
+
 
   newCustomer(): void {
     this.submitted = false;
@@ -50,8 +52,10 @@ export class CreateCustomerComponent implements OnInit {
   }
 
   verify(){
-    this.res= this.customer.LifeInsurancePremium + this.customer.PublicProvidentFund  + this.customer.EmployeesProvidentFund + this.customer.EquityLinkedSavingsScheme + this.customer.UnitLinkedInsurancePlan + this.customer.TaxSaverFixedDeposits + this.customer.NationalPensionScheme + this.customer.HomeLoanPrincipalRepayment  + this.customer.SukanyaSamriddhiYojana  + this.customer.SeniorCitizensSavingsScheme + this.customer.NationalSavingsCertificate ;
+    this.res=  parseFloat(this.customer.LifeInsurancePremium)+ parseFloat(this.customer.PublicProvidentFund)  + parseFloat(this.customer.EmployeesProvidentFund) + parseFloat(this.customer.EquityLinkedSavingsScheme) + parseFloat(this.customer.UnitLinkedInsurancePlan) + parseFloat(this.customer.TaxSaverFixedDeposits) + parseFloat(this.customer.NationalPensionScheme) + parseFloat(this.customer.HomeLoanPrincipalRepayment)  + parseFloat(this.customer.SukanyaSamriddhiYojana)  + parseFloat(this.customer.SeniorCitizensSavingsScheme) + parseFloat(this.customer.NationalSavingsCertificate) ;
+
     if(this.res <= 150000){
+      // window.alert("AMount cannot be exceeded greater than 1.5 lakh")
       return false;
     }
     else{

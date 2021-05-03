@@ -1,3 +1,4 @@
+import { Customer } from './../../customers-80d/customer';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -20,6 +21,8 @@ export class recomComponent {
 
 //     this.currentVal=val;
 //   }
+
+
 calculate(){
   if(this.currentVal >= 250000 && this.currentVal < 500000){
     this.deduction=20000;

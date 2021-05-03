@@ -19,7 +19,7 @@ export class CreateCustomer80DComponent implements OnInit {
   warn:boolean=true;
   alert:boolean=false;
   constructor(private customerService: CustomerService) { }
-
+res:number;
   ngOnInit() {
   }
 
@@ -41,6 +41,16 @@ export class CreateCustomer80DComponent implements OnInit {
   }
   closeAlert(){
     this.alert=false
+  }
+  verify(){
+    this.res=parseFloat(this.customer.PaymentformedicalinsurancepremiumcontributiontoCGHS) + parseFloat(this.customer.PaymentofmedicalinsurancepremiumforresidentSrCitizen) + parseFloat(this.customer.Paymentmadeforpreventivehealthcheckup) + parseFloat(this.customer.MedicalexpenditureonthehealthofResidentveryseniorcitizenforwhomnoamountispaidtoeffectkeepinforcehealth) ;
+    if(this.res <= 25000){
+    return false;
+    }
+    else
+    {
+      return true;
+    }
   }
  // let pdfName = 'tax_report';
   //var doc = new jsPDF();

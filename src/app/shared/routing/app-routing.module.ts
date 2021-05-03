@@ -27,7 +27,8 @@ import {CreateCustomer80DComponent} from '../../customers-80d/create-customer80d
 import { CreateCustomer80CCDComponent } from '../../customers-80ccd/create-customer80ccd/create-customer80ccd.component';
 import {CustomersList80CCDComponent} from './../../customers-80ccd/customers-list80ccd/customers-list80ccd.component';
 import {HelpComponent} from './../../components/Help/Help/help.component';
-
+import {CreateCustomerDeductionComponent} from '../../customers/section80c-deduction/create-customer-deduction/create-customer-deduction.component';
+import {CustomersListDeductionComponent} from '../../customers/section80c-deduction/customers-list-deduction/customers-list-deduction.component';
 const routes: Routes = [
   { path: '', redirectTo: '/company-page', pathMatch: 'full'},
   {path:'home-page',component:CompanyPageComponent},
@@ -51,7 +52,9 @@ const routes: Routes = [
 {path:'addsection80-ccd',component:CreateCustomer80CCDComponent},
 {path:'about-us',component:AboutUsComponent},
 {path:'help',component:HelpComponent},
-{path:'services',component:ServicesPageComponent}
+{path:'services',component:ServicesPageComponent},
+{path:'adddeduction',component:CreateCustomerDeductionComponent},
+{path:'reportc-deduction',component:CustomersListDeductionComponent}
 ];
 
 @NgModule({

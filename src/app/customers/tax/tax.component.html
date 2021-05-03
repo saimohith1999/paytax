@@ -21,11 +21,14 @@
         <li class="nav-item active">
           <a class="nav-link" href="http://localhost:4200/profile">User Profile <span class="sr-only">(current)</span></a>
         </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/recom-form">Create form</a>
+        </li>
         <li class="nav-item article active">
           <a class="nav-link" href="http://localhost:4200/dropdown">Tax Reports</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="http://localhost:4200/recom-form">Create form</a>
+          <a class="nav-link" href="http://localhost:4200/tax">Tax Calculator</a>
         </li>
 
         <li class="nav-item active">
@@ -53,7 +56,7 @@
 
                                       <label for="full_name"  class="col-md-4 col-form-label text-md-right">Total Income</label>
                                       <div class="col-md-6">
-                                          <input type="number" id="name"  class="form-control" [(ngModel)]="income" name="name" #name="ngModel" required>
+                                          <input type="number" id="name"  autocomplete="off" class="form-control" [(ngModel)]="income" name="name" #name="ngModel" required>
                                        <!-- <div *ngIf="warn">
                                         <div *ngIf="name.invalid && (name.dirty || name.touched)"
                                           class="alert alert-danger">
@@ -76,7 +79,7 @@
                                   <div class="form-group row">
                                       <label for="Aadhar" class="col-md-4 col-form-label text-md-right">Deductions</label>
                                       <div class="col-md-6">
-                                          <input type="number" id="aadhar" class="form-control" required [(ngModel)]="deduction" name="aadhar" #aadhar="ngModel" >
+                                          <input type="number" id="aadhar" autocomplete="off" class="form-control" required [(ngModel)]="deduction" name="aadhar" #aadhar="ngModel" >
                                           <!-- <div *ngIf="warn">
                                           <div *ngIf="aadhar.invalid && (aadhar.dirty || aadhar.touched)"
                                           class="alert alert-danger">

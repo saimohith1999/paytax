@@ -25,17 +25,18 @@
       <li class="nav-item active">
         <a class="nav-link" href="http://localhost:4200/profile">User Profile</a>
       </li>
-      <li class="nav-item article active">
-        <a class="nav-link" href="http://localhost:4200/dropdown">Tax Reports</a>
-      </li>
+
       <li class="nav-item active">
         <a class="nav-link" href="http://localhost:4200/recom-form">Create Form</a>
+      </li>
+      <li class="nav-item article active">
+        <a class="nav-link" href="http://localhost:4200/dropdown">Tax Reports</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="http://localhost:4200/tax">Tax Calculator</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="http://localhost:4200/company-page">Logout</a>
+        <a class="nav-link" href="http://localhost:4200/home-page">Logout</a>
       </li>
     </ul>
     <span class="navbar-text">
@@ -59,8 +60,11 @@
             <!--- <img class="align-self-start mr-5 img-thumbnail rounded-circle" src="{{(user.photoURL) ? user.photoURL : '/assets/dummy-user.png'}}"
               alt="{{user.displayName}}">-->
             <div class="media-body">
-              <h1>Hello: <strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1>
-              <p>User ID: <strong>{{user.uid}}</strong></p>
+
+              <!-- <h1>Hello: <strong>{{user.name}}</strong></h1> -->
+
+              <h1>Hello: <strong>{{user.displayName}}</strong></h1>
+
               <p>Email: <strong>{{user.email}}</strong></p>
               <p>Email Verified: <strong>{{user.emailVerified}}</strong></p>
               <button style="margin-bottom: 15pc;"(click)="uploadImage()">Upload Image</button>

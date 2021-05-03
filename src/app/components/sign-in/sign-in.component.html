@@ -93,14 +93,14 @@
 
     <!-- Login Form -->
     <form>
-      <input type="email" id="login" class="fadeIn second" name="login" placeholder="Email Address" #userName required>
-      <input type="password" id="password" class="fadeIn third" name="login" placeholder="Password" #userPassword required>
-      <input type="submit" class="fadeIn fourth lgn" value="Sign-up" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
+      <input type="email" autocomplete="off" id="login" class="fadeIn second" name="login" placeholder="Email Address" #userName required>
+      <input type="password" autocomplete="off" id="password" class="fadeIn third" name="login" placeholder="Password" #userPassword required>
+      <input type="submit" autocomplete="off" class="fadeIn fourth lgn" value="Sign-up" value="Log in" (click)="authService.SignIn(userName.value, userPassword.value)">
       <div class="forgotPassword">
         <span routerLink="/forgot-password" class="btn  btn-danger">Forgot Password?</span>
       </div>
       <div class="redirectToLogin">
-        <span class="qwe">Don't have an account?<a class="redirect asd" routerLink="/sign-up"> Sign Up</a></span>
+        <span class="qwe" style="color: blue;">Don't have an account?<a class="redirect asd" routerLink="/sign-up"> Sign Up</a></span>
       </div>
     </form>
 

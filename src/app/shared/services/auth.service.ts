@@ -1,3 +1,4 @@
+
 import { Injectable, NgZone } from '@angular/core';
 import { User } from "../services/user";
 import firebase from 'firebase/app';
@@ -85,6 +86,7 @@ export class AuthService {
   get isLoggedIn(): boolean {
     const user = localStorage.getItem('user');
     return (user !== null ) ? true : false;
+
   }
 
   // Sign in with Google
@@ -121,6 +123,7 @@ export class AuthService {
       merge: true
     })
   }
+
 
   employees()
   {

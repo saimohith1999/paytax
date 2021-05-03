@@ -53,11 +53,12 @@
                       <div class="card-header">Section 80D</div>
                       <div class="card-body">
                           <form name="myform" (ngSubmit)="onSubmit()"onsubmit="return validateForm()" method="post">
+                            <p style="color: red;">Note:- Section 80D allows for a maximum deduction of up to Rs.25000 lakh every year</p>
 
                             <div class="form-group row">
                                   <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name*</label>
                                   <div class="col-md-6">
-                                      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name"  required minlength="4" appForbiddenName="bob" #name="ngModel" required>
+                                      <input type="text" autocomplete="off" class="form-control" id="name" required [(ngModel)]="customer.name" name="name"  required minlength="4" appForbiddenName="bob" #name="ngModel" required>
                                       <div *ngIf="warn">
                                         <div *ngIf="name.invalid && (name.dirty || name.touched)"
                                           class="alert alert-danger">
@@ -80,7 +81,7 @@
                               <div class="form-group row">
                                   <label for="name" class="col-md-4 col-form-label text-md-right">Age*</label>
                                   <div class="col-md-6">
-                                    <input type="number" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required maxlength="2" required class="form-control" #age="ngModel">
+                                    <input type="number" autocomplete="off" class="form-control" id="age" required [(ngModel)]="customer.age" name="age" required maxlength="2" required class="form-control" #age="ngModel">
                                     <div *ngIf="warn">
                                       <div *ngIf="age.invalid && (age.dirty || age.touched)"
                                       class="alert alert-danger">
@@ -98,7 +99,7 @@
                               <div class="form-group row">
                                 <label for="user_name" class="col-md-4 col-form-label text-md-right">Assessment Year*</label>
                                 <div class="col-md-6">
-                                    <input type="date" id="dob" class="form-control" [(ngModel)]="customer.Assessmentyear" name="dob" required [(ngModel)]="customer.dob" name="dob" #dob="ngModel" required>
+                                    <input type="date" id="dob" autocomplete="off" class="form-control" [(ngModel)]="customer.Assessmentyear" name="dob" required [(ngModel)]="customer.dob" name="dob" #dob="ngModel" required>
                                     <div *ngIf="warn">
                                       <div *ngIf="dob.invalid && (dob.dirty ||dob .touched)"
                                       class="alert alert-danger">
@@ -114,7 +115,7 @@
                               <div class="form-group row">
                                   <label for="name" class="col-md-4 col-form-label text-md-right">Payment for medical insurance premium (mode other than cash) /contribution to CGHS</label>
                                   <div class="col-md-6">
-                                      <input type="number" class="form-control" id="cghs" required [(ngModel)]="customer.PaymentformedicalinsurancepremiumcontributiontoCGHS" name="cghs" #pfm="ngModel" required>
+                                      <input type="text" autocomplete="off" class="form-control" id="cghs" required [(ngModel)]="customer.PaymentformedicalinsurancepremiumcontributiontoCGHS" name="cghs" #pfm="ngModel" required>
                                       <div *ngIf="warn">
                                         <div *ngIf="pfm.invalid && (pfm.dirty ||pfm .touched)"
                                         class="alert alert-danger">
@@ -131,7 +132,7 @@
                                 <label for="name" class="col-md-4 col-form-label text-md-right"> Payment of medical insurance premium for resident Sr. Citizen – (mode other than cash)
                                 </label>
                                 <div class="col-md-6">
-                                    <input type="number" class="form-control" id="providentfund" required [(ngModel)]="customer.PaymentofmedicalinsurancepremiumforresidentSrCitizen" name="providentfund" #pfm1="ngModel" required>
+                                    <input type="text" autocomplete="off" class="form-control" id="providentfund" required [(ngModel)]="customer.PaymentofmedicalinsurancepremiumforresidentSrCitizen" name="providentfund" #pfm1="ngModel" required>
                                     <div *ngIf="warn">
                                       <div *ngIf="pfm1.invalid && (pfm1.dirty ||pfm1 .touched)"
                                       class="alert alert-danger">
@@ -147,7 +148,7 @@
                             <div class="form-group row">
                               <label for="name" class="col-md-4 col-form-label text-md-right">Payment made for preventive health check up</label>
                               <div class="col-md-6">
-                                  <input type="number" class="form-control" id="eprovident" required [(ngModel)]="customer.Paymentmadeforpreventivehealthcheckup" name="eprovident" #pfm2="ngModel" required>
+                                  <input type="text" autocomplete="off" class="form-control" id="eprovident" required [(ngModel)]="customer.Paymentmadeforpreventivehealthcheckup" name="eprovident" #pfm2="ngModel" required>
                                   <div *ngIf="warn">
                                     <div *ngIf="pfm2.invalid && (pfm2.dirty ||pfm2 .touched)"
                                     class="alert alert-danger">
@@ -163,7 +164,7 @@
                           <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right"> Medical expenditure on the health of Resident very senior citizen for whom no amount is paid to effect/keep in force health) ( mode of payment other than cash )</label>
                             <div class="col-md-6">
-                                <input type="number" class="form-control" id="ELSS" required [(ngModel)]="customer.MedicalexpenditureonthehealthofResidentveryseniorcitizenforwhomnoamountispaidtoeffectkeepinforcehealth" name="ELSS" #pfm3="ngModel" required>
+                                <input type="text" class="form-control" autocomplete="off" id="ELSS" required [(ngModel)]="customer.MedicalexpenditureonthehealthofResidentveryseniorcitizenforwhomnoamountispaidtoeffectkeepinforcehealth" name="ELSS" #pfm3="ngModel" required>
                                 <div *ngIf="warn">
                                   <div *ngIf="pfm3.invalid && (pfm3.dirty ||pfm3 .touched)"
                                   class="alert alert-danger">
@@ -176,17 +177,22 @@
                                       </div>
                               </div>
                         </div>
+                        <div class="form-group row">
+                          <label for="name" class="col-md-4 col-form-label text-md-right">Total:-</label>{{res}}
 
-
+                      </div>
+                      <ng-template [ngIf]="res > 25000">
+                        <p class="btn-warning" style="text-align:center">Amount cannont be exceeded 25000</p>
+                      </ng-template>
 
                                   <div class="col-md-6 offset-md-4">
-                                      <button type="submit" [disabled]="!customer.name || !customer.age ||!customer.Assessmentyear || !customer.PaymentformedicalinsurancepremiumcontributiontoCGHS || !customer.PaymentofmedicalinsurancepremiumforresidentSrCitizen || !customer.Paymentmadeforpreventivehealthcheckup || !customer.MedicalexpenditureonthehealthofResidentveryseniorcitizenforwhomnoamountispaidtoeffectkeepinforcehealth" class="btn btn-primary">
+                                      <button type="submit" [disabled]="!customer.name || !customer.age ||!customer.Assessmentyear || !customer.PaymentformedicalinsurancepremiumcontributiontoCGHS || !customer.PaymentofmedicalinsurancepremiumforresidentSrCitizen || !customer.Paymentmadeforpreventivehealthcheckup || !customer.MedicalexpenditureonthehealthofResidentveryseniorcitizenforwhomnoamountispaidtoeffectkeepinforcehealth || verify()" class="btn btn-primary">
                                       Submit
                                       </button>
 
                                   </div>
-                                  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show dist" role="alert">
-                                    <strong>Success!</strong> Form has been submitted successfully.
+                                  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show dist" style="text-align: center;" role="alert">
+                                    <strong>Success!</strong> Form submitted successfully.
                                     <button (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>
                                     </button>

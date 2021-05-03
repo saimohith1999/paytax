@@ -75,7 +75,7 @@
                   <ul class="d-flex aic">
                     <li class="login"><a class="nav-link"  href="http://localhost:4200/home-page">Home</a></li>
                     <li class="login"><a class="nav-link" href="http://localhost:4200/register-form">Register</a></li>
-                    <li class="login"><a class="nav-link" href="#">Services</a></li>
+                    <li class="login"><a class="nav-link" href="http://localhost:4200/services">Services</a></li>
                     <li class="login"><a class="nav-link" href="http://localhost:4200/about-us">About Us</a></li>
                     <li class="login"><a class="nav-link" href="http://localhost:4200/about-us">help</a></li>
                                         </ul>
@@ -97,13 +97,13 @@
       <div class="row justify-content-center">
           <div class="col-md-8">
                   <div class="card">
-                      <div class="card-header">Need Help!</div>
+                      <div class="card-header" style="text-align: center;">Need Help!</div>
                       <div class="card-body">
-                          <form name="myform" (ngSubmit)="onSubmit()" onsubmit="return validateForm()" method="post">
+                          <form name="myform"  (ngSubmit)="onSubmit() " class="contact-form" onsubmit="return validateForm()" method="post">
                             <div class="form-group row">
                                   <label for="full_name" class="col-md-4 col-form-label text-md-right">Full Name*</label>
                                   <div class="col-md-6">
-                                      <input type="text" class="form-control" id="name" required [(ngModel)]="customer.name" name="name"  required minlength="4" appForbiddenName="bob" #name="ngModel">
+                                      <input type="text" autocomplete="off" class="form-control name" id="name" required [(ngModel)]="customer.name" name="name"  required minlength="4" appForbiddenName="bob" #name="ngModel">
                                       <div *ngIf="warn">
                                         <div *ngIf="name.invalid && (name.dirty || name.touched)"
                                           class="alert alert-danger">
@@ -126,7 +126,7 @@
                               <div class="form-group row">
                                   <label for="Email" class="col-md-4 col-form-label text-md-right">Email Id</label>
                                   <div class="col-md-6">
-                                    <input type="email" class="form-control" id="email" required [(ngModel)]="customer.email" name="email"  required class="form-control" #email="ngModel">
+                                    <input type="email" class="form-control email" autocomplete="off" id="email" required [(ngModel)]="customer.email" name="email"  required class="form-control" #email="ngModel">
                                     <div *ngIf="warn">
                                       <div *ngIf="email.invalid && (email.dirty || email.touched)"
                                       class="alert alert-danger">
@@ -141,7 +141,7 @@
                               <div class="form-group row">
                                 <label for="query" class="col-md-4 col-form-label text-md-right">Query</label>
                                 <div class="col-md-6">
-                                    <input type="text" id="text" class="form-control"  name="query" required [(ngModel)]="customer.query" name="query" #query="ngModel" required>
+                                    <input type="text" id="text" class="form-control query" autocomplete="off" name="query" required [(ngModel)]="customer.query" name="query" #query="ngModel" required>
                                     <div *ngIf="warn">
                                       <div *ngIf="query.invalid && (query.dirty ||query .touched)"
                                       class="alert alert-danger">
@@ -165,7 +165,7 @@
                                         Note:Atleast one Scheme has to be selected!
                                       </div> -->
                                   </div>
-                                  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show dist" role="alert">
+                                  <div *ngIf="alert" class="alert alert-success alert-dismissible fade show dist" style="text-align: center;" role="alert">
                                     <strong>Success!</strong> Query submitted successfully.
                                     <button (click) ="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
                                       <span aria-hidden="true">&times;</span>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { ViewChild } from '@angular/core';
+
+
 
 @Component({
   selector: 'app-dashboard',
@@ -8,9 +12,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-
+constructor(){}
   ngOnInit() { }
-
-
+  
 }
 
