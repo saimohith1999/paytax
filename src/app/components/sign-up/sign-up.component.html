@@ -84,7 +84,6 @@
 
     <!-- Login Form -->
     <form>
-      <input type="text" autocomplete="off" id="login" class="fadeIn first" name="login" placeholder="UserName" #displayName required>
       <input type="email" autocomplete="off" id="login" class="fadeIn second" name="login" placeholder="Email Address" #userEmail required>
       <input type="password" autocomplete="off"id="password" class="fadeIn third" name="login" placeholder="Password" #userPwd required>
       <input type="submit" autocomplete="off" class="fadeIn fourth" value="Sign-up" (click)="authService.SignUp(userEmail.value, userPwd.value)">
